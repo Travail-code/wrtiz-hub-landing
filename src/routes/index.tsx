@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  Download,
   Github,
   MessageCircle,
   ShieldCheck,
@@ -22,17 +21,17 @@ import { useCountUp } from "@/hooks/use-reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Writz Hub — Script premium pour executors Roblox" },
+      { title: "Writz Hub — Premium Script Hub Concept" },
       {
         name: "description",
         content:
-          "Writz Hub : script dark premium, ultra rapide et compatible Xeno, Solara, Delta et plus. Interface glass, mises à jour continues, téléchargement instantané.",
+          "Writz Hub is a dark premium script hub concept: glass interface, executor-style mockups and a fictional loader preview. Visual showcase only.",
       },
-      { property: "og:title", content: "Writz Hub — Script premium pour executors" },
+      { property: "og:title", content: "Writz Hub — Premium Script Hub Concept" },
       {
         property: "og:description",
         content:
-          "Interface glass, performances natives et compatibilité multi-executors. Téléchargez Writz Hub gratuitement.",
+          "A dark premium concept landing page: glass UI, animated stats and a stylised fictional executor window.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -42,7 +41,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
   }),
@@ -65,41 +64,41 @@ const EXECUTORS = [
 const FEATURES = [
   {
     icon: Zap,
-    title: "Exécution instantanée",
-    text: "Injection en moins de 300 ms, aucune latence perceptible en jeu.",
+    title: "Instant execution",
+    text: "Sub-300 ms injection concept with no perceivable latency in-session.",
   },
   {
     icon: ShieldCheck,
-    title: "Bypass sécurisé",
-    text: "Protection anti-détection maintenue à chaque mise à jour serveur.",
+    title: "Secure by design",
+    text: "A protection layer imagined to stay maintained with every release.",
   },
   {
     icon: Layers,
-    title: "Hub multi-scripts",
-    text: "Des dizaines de modules organisés par jeu, chargés à la demande.",
+    title: "Multi-script hub",
+    text: "Dozens of modules organised per game and loaded on demand.",
   },
   {
     icon: Cpu,
-    title: "Ultra léger",
-    text: "Moins de 4 Mo en mémoire, zéro dépendance externe requise.",
+    title: "Ultra lightweight",
+    text: "Under 4 MB in memory, with zero external dependency required.",
   },
   {
     icon: Wand2,
-    title: "UI personnalisable",
-    text: "Thèmes, raccourcis clavier et disposition entièrement modulables.",
+    title: "Custom interface",
+    text: "Themes, keyboard shortcuts and layout are fully modular.",
   },
   {
     icon: Rocket,
-    title: "Mises à jour auto",
-    text: "Le hub se synchronise en arrière-plan, toujours à jour.",
+    title: "Auto updates",
+    text: "The hub syncs in the background and always stays current.",
   },
 ];
 
 const STATS = [
-  { value: 128000, suffix: "+", label: "Téléchargements" },
-  { value: 42, suffix: "", label: "Scripts intégrés" },
-  { value: 99.8, suffix: "%", label: "Uptime des serveurs" },
-  { value: 24, suffix: "/7", label: "Support Discord" },
+  { value: 128000, suffix: "+", label: "Community members" },
+  { value: 42, suffix: "", label: "Built-in scripts" },
+  { value: 99.8, suffix: "%", label: "Concept uptime" },
+  { value: 24, suffix: "/7", label: "Discord support" },
 ];
 
 function WritzHub() {
@@ -132,16 +131,16 @@ function Nav() {
         </a>
         <nav className="flex shrink-0 items-center gap-6 text-xs tracking-widest text-muted-foreground uppercase">
           <a href="#features" className="hidden transition-colors hover:text-foreground sm:block">
-            Fonctions
+            Features
           </a>
           <a href="#showcase" className="hidden transition-colors hover:text-foreground sm:block">
-            Aperçu
+            Showcase
           </a>
           <a
-            href="#download"
+            href="#loader"
             className="rounded-full border border-white/15 px-4 py-2 transition-colors hover:border-white/40 hover:text-foreground"
           >
-            Télécharger
+            Preview
           </a>
         </nav>
       </div>
@@ -157,45 +156,218 @@ function Logo() {
   );
 }
 
-function CtaButton({ label = "Télécharger" }: { label?: string }) {
-  const ref = useRef<HTMLAnchorElement | null>(null);
+/* ---------- Fictional loader window (visual mockup only) ---------- */
 
-  const ripple = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const span = document.createElement("span");
-    const size = Math.max(rect.width, rect.height) * 2.2;
-    span.className = "wz-ripple";
-    span.style.width = `${size}px`;
-    span.style.height = `${size}px`;
-    span.style.left = `${e.clientX - rect.left}px`;
-    span.style.top = `${e.clientY - rect.top}px`;
-    el.appendChild(span);
-    setTimeout(() => span.remove(), 700);
+const CODE_LINES: ReactNode[][] = [
+  [
+    <span key="c" className="text-white/35 italic">
+      -- writz hub · fictional loader preview
+    </span>,
+  ],
+  [
+    <span key="c" className="text-white/35 italic">
+      -- visual mockup, not a working script
+    </span>,
+  ],
+  [],
+  [
+    <span key="k" className="text-white/90">
+      local
+    </span>,
+    <span key="v" className="text-white/70">
+      {" "}
+      Writz{" "}
+    </span>,
+    <span key="e" className="text-white/40">
+      ={" "}
+    </span>,
+    <span key="f" className="text-white">
+      require
+    </span>,
+    <span key="p" className="text-white/40">
+      (
+    </span>,
+    <span key="s" className="text-white/55">
+      "writz.core"
+    </span>,
+    <span key="p2" className="text-white/40">
+      )
+    </span>,
+  ],
+  [],
+  [
+    <span key="v" className="text-white/70">
+      Writz
+    </span>,
+    <span key="d" className="text-white/40">
+      :
+    </span>,
+    <span key="f" className="text-white">
+      init
+    </span>,
+    <span key="p" className="text-white/40">
+      {"({"}
+    </span>,
+  ],
+  [
+    <span key="k" className="pl-4 text-white/60">
+      theme
+    </span>,
+    <span key="e" className="text-white/40">
+      {" "}
+      ={" "}
+    </span>,
+    <span key="s" className="text-white/55">
+      "midnight"
+    </span>,
+    <span key="c" className="text-white/40">
+      ,
+    </span>,
+  ],
+  [
+    <span key="k" className="pl-4 text-white/60">
+      modules
+    </span>,
+    <span key="e" className="text-white/40">
+      {" "}
+      = {"{ "}
+    </span>,
+    <span key="s" className="text-white/55">
+      "visuals"
+    </span>,
+    <span key="c1" className="text-white/40">
+      ,{" "}
+    </span>,
+    <span key="s2" className="text-white/55">
+      "combat"
+    </span>,
+    <span key="c2" className="text-white/40">
+      {" }"},
+    </span>,
+  ],
+  [
+    <span key="k" className="pl-4 text-white/60">
+      stealth
+    </span>,
+    <span key="e" className="text-white/40">
+      {" "}
+      ={" "}
+    </span>,
+    <span key="b" className="text-white/90">
+      true
+    </span>,
+    <span key="c" className="text-white/40">
+      ,
+    </span>,
+  ],
+  [
+    <span key="p" className="text-white/40">
+      {"})"}
+    </span>,
+  ],
+  [],
+  [
+    <span key="v" className="text-white/70">
+      Writz
+    </span>,
+    <span key="d" className="text-white/40">
+      :
+    </span>,
+    <span key="f" className="text-white">
+      mount
+    </span>,
+    <span key="p" className="text-white/40">
+      (
+    </span>,
+    <span key="s" className="text-white/55">
+      "hub"
+    </span>,
+    <span key="p2" className="text-white/40">
+      )
+    </span>,
+    <span key="c" className="text-white/35 italic">
+      {"  "}-- renders the panel
+    </span>,
+  ],
+];
+
+function LoaderWindow() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [active, setActive] = useState(0);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ x: -py * 5, y: px * 6 });
   };
 
   return (
-    <a
-      ref={ref}
-      id="download"
-      href="#download"
-      onClick={ripple}
-      className="wz-cta inline-flex items-center gap-2.5 rounded-full px-8 py-4 text-sm font-semibold tracking-wide text-foreground"
-    >
-      <Download className="h-4 w-4" />
-      {label}
-    </a>
+    <div id="loader" className="mx-auto max-w-2xl [perspective:1200px]">
+      <div
+        data-cursor="hover"
+        onMouseMove={onMove}
+        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+        className="wz-tilt wz-glass overflow-hidden rounded-2xl p-2 text-left"
+        style={{ transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+      >
+        <div className="overflow-hidden rounded-xl border border-white/8 bg-[#0c0c0c]">
+          <div className="flex items-center gap-2 border-b border-white/8 px-4 py-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
+            <div className="ml-4 flex gap-1.5">
+              {["loader.lua", "config.lua"].map((tab, i) => (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  className={`rounded-md px-2.5 py-1 font-mono text-[11px] transition-colors duration-300 ${
+                    active === i
+                      ? "bg-white/10 text-foreground"
+                      : "text-muted-foreground hover:bg-white/5"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="wz-code overflow-x-auto px-4 py-5 font-mono text-[12.5px] leading-[1.85] sm:text-[13.5px]">
+            {CODE_LINES.map((line, i) => (
+              <div key={i} className="group/line flex gap-4 rounded px-1 hover:bg-white/[0.03]">
+                <span className="w-5 shrink-0 text-right text-white/20 tabular-nums select-none">
+                  {i + 1}
+                </span>
+                <code className="whitespace-pre">
+                  {line.length ? line : "\u00A0"}
+                  {i === CODE_LINES.length - 1 && <span className="wz-caret ml-1 align-middle" />}
+                </code>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/8 px-4 py-2.5 font-mono text-[10.5px] tracking-widest text-muted-foreground uppercase">
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
+              Concept build · v3.2
+            </span>
+            <span>Lua · UTF-8 · Ln 13</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
 function Hero() {
   return (
-    <section id="top" className="relative px-5 pt-40 pb-24 sm:pt-52 sm:pb-32">
+    <section id="top" className="relative px-5 pt-36 pb-24 sm:pt-48 sm:pb-32">
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-[11px] tracking-[0.25em] text-muted-foreground uppercase">
-            <Eye className="h-3 w-3" /> v3.2 — Undetected
+            <Eye className="h-3 w-3" /> v3.2 — Concept preview
           </span>
         </Reveal>
 
@@ -209,20 +381,20 @@ function Hero() {
 
         <Reveal delay={320}>
           <p className="mt-6 text-base text-muted-foreground sm:text-lg">
-            Le hub de scripts pensé pour{" "}
+            A script hub interface built for{" "}
             <Typewriter
               className="font-semibold text-foreground"
-              words={["la vitesse.", "la discrétion.", "tous les executors.", "les pros."]}
+              words={["speed.", "stealth.", "every executor.", "power users."]}
             />
           </p>
         </Reveal>
 
         <Reveal delay={460}>
-          <div className="mt-12 flex justify-center">
-            <CtaButton />
+          <div className="mt-14">
+            <LoaderWindow />
           </div>
           <p className="mt-5 text-xs tracking-widest text-muted-foreground/70 uppercase">
-            Gratuit · Sans clé · 4 Mo
+            Fictional loader · visual mockup only
           </p>
         </Reveal>
       </div>
@@ -256,13 +428,13 @@ function Features() {
     <section id="features" className="px-5 py-28 sm:py-36">
       <div className="mx-auto max-w-6xl">
         <WordReveal
-          text="Tout ce qu'un hub devrait être"
+          text="Everything a hub should be"
           className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-5xl"
         />
         <Reveal delay={200}>
           <p className="mt-5 max-w-xl text-sm text-muted-foreground sm:text-base">
-            Une base native optimisée, une interface glass discrète et des modules maintenus
-            quotidiennement.
+            A lean core, a discreet glass interface and modules imagined to be maintained every
+            single day.
           </p>
         </Reveal>
 
@@ -288,7 +460,7 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   return (
     <div ref={ref} className="wz-glass rounded-2xl px-6 py-10 text-center">
       <div className="text-4xl font-bold tracking-tight tabular-nums sm:text-5xl">
-        {current.toLocaleString("fr-FR", {
+        {current.toLocaleString("en-US", {
           minimumFractionDigits: decimals,
           maximumFractionDigits: decimals,
         })}
@@ -342,7 +514,7 @@ function Showcase() {
     <section id="showcase" className="px-5 pb-28 sm:pb-36">
       <div ref={wrapRef} className="mx-auto max-w-5xl text-center">
         <WordReveal
-          text="Une interface qui reste hors de vue"
+          text="An interface that stays out of sight"
           className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-5xl"
         />
 
@@ -363,8 +535,8 @@ function Showcase() {
                   <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-                  <span className="ml-3 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                    writz_hub.lua
+                  <span className="ml-3 font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                    writz_hub.panel
                   </span>
                 </div>
                 <div className="grid gap-4 p-5 sm:grid-cols-[180px_minmax(0,1fr)]">
@@ -401,11 +573,15 @@ function Showcase() {
                         </span>
                       </div>
                     ))}
-                    <pre className="overflow-x-auto rounded-xl border border-white/8 bg-black/50 p-4 font-mono text-[11px] leading-relaxed text-muted-foreground">
-                      {`loadstring(game:HttpGet(
-  "https://writzhub.gg/loader.lua"
-))()`}
-                    </pre>
+                    <div className="rounded-xl border border-white/8 bg-black/50 p-4 font-mono text-[11px] leading-relaxed">
+                      <div className="text-white/35 italic">-- session log (mockup)</div>
+                      <div className="text-white/70">
+                        <span className="text-white/90">[core]</span> modules loaded — 42
+                      </div>
+                      <div className="text-white/70">
+                        <span className="text-white/90">[ui]</span> panel mounted
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -445,7 +621,8 @@ function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-6xl text-[11px] text-muted-foreground/60">
-        © {new Date().getFullYear()} Writz Hub. Projet non affilié à Roblox Corporation.
+        © {new Date().getFullYear()} Writz Hub. Concept project, not affiliated with any game or
+        platform.
       </p>
     </footer>
   );
