@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import router from '@tanstack/router-plugin/vite'
+import { vitePlugin as router } from '@tanstack/router-plugin'
 
 export default defineConfig({
   plugins: [
