@@ -2,10 +2,9 @@
   "name": "wrtiz-hub-landing",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
-  "vercel": {
-    "version": 2,
-    "builds": [],
-    "outputDirectory": "."
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "dev": "echo 'Static site - no dev server'",
+    "start": "echo 'Static site - no start command'"
   }
 }
