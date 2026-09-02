@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writz Hub | Script Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">&#9632;</span>
+                <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+            </a>
+            <nav class="nav">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#stats" class="nav-link">Statistiques</a>
+                <a href="#showcase" class="nav-link">Aperçu</a>
+                <a href="#download" class="nav-link">Télécharger</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#features" class="mobile-nav-link">Fonctionnalités</a>
+        <a href="#stats" class="mobile-nav-link">Statistiques</a>
+        <a href="#showcase" class="mobile-nav-link">Aperçu</a>
+        <a href="#download" class="mobile-nav-link">Télécharger</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Script Premium</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Writz</span>
+                    <span class="title-line highlight">Hub</span>
+                </h1>
+                <p class="hero-subtitle typewriter">
+                    Le script ultime pour automatiser et optimiser vos tâches.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <span class="btn-content">
+                            <span class="btn-icon">&#8595;</span>
+                            <span class="btn-text">Télécharger</span>
+                        </span>
+                        <span class="btn-glow"></span>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span class="btn-text">Découvrir les fonctionnalités</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">writz-hub.js</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code><span class="code-line"><span class="code-keyword">const</span> <span class="code-var">writzHub</span> = <span class="code-function">require</span>(<span class="code-string">'writz-hub'</span>);</span>
+<span class="code-line"><span class="code-keyword">await</span> <span class="code-var">writzHub</span>.<span class="code-method">initialize</span>(<span class="code-params">{</span></span>
+<span class="code-line">  <span class="code-prop">autoExecute</span>: <span class="code-boolean">true</span>,</span>
+<span class="code-line">  <span class="code-prop">optimize</span>: <span class="code-boolean">true</span>,</span>
+<span class="code-line"><span class="code-params">});</span></span>
+<span class="code-line"><span class="code-comment">// Ready to go!</span></span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Executors Marquee -->
+    <section class="executors-marquee" id="executors">
+        <div class="marquee-container">
+            <div class="marquee">
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">X</span>
+                        <span>Xeno</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">S</span>
+                        <span>Solara</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">D</span>
+                        <span>Delta</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">E</span>
+                        <span>Eclipse</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">K</span>
+                        <span>Krnl</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">J</span>
+                        <span>JJSploit</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">F</span>
+                        <span>Fluxus</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">X</span>
+                        <span>Xeno</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">S</span>
+                        <span>Solara</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">D</span>
+                        <span>Delta</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">E</span>
+                        <span>Eclipse</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">K</span>
+                        <span>Krnl</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">J</span>
+                        <span>JJSploit</span>
+                    </div>
+                </div>
+                <div class="marquee-item">
+                    <div class="executor-logo">
+                        <span class="executor-icon">F</span>
+                        <span>Fluxus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fonctionnalités</span>
+                <h2 class="section-title">
+                    <span class="word">Puissant</span>
+                    <span class="word highlight">et</span>
+                    <span class="word">intelligent</span>
+                </h2>
+                <p class="section-subtitle">
+                    Découvrez ce que Writz Hub peut faire pour vous.
+                </p>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card glass-card" data-animation="fade-up">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Automatisation</h3>
+                    <p class="feature-description">
+                        Automatisez vos tâches répétitives avec des scripts intelligents.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+                <article class="feature-card glass-card" data-animation="fade-up" data-delay="0.1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Interface Moderne</h3>
+                    <p class="feature-description">
+                        Une interface intuitive et design épuré pour une expérience optimale.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+                <article class="feature-card glass-card" data-animation="fade-up" data-delay="0.2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Rapidité</h3>
+                    <p class="feature-description">
+                        Exécution ultra-rapide grâce à une optimisation avancée.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+                <article class="feature-card glass-card" data-animation="fade-up" data-delay="0.3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Sécurité</h3>
+                    <p class="feature-description">
+                        Protégez vos données avec un chiffrement de pointe.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+                <article class="feature-card glass-card" data-animation="fade-up" data-delay="0.4">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Temps Réel</h3>
+                    <p class="feature-description">
+                        Suivi et mise à jour en temps réel de vos opérations.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+                <article class="feature-card glass-card" data-animation="fade-up" data-delay="0.5">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-Utilisateurs</h3>
+                    <p class="feature-description">
+                        Gérez plusieurs comptes et sessions simultanément.
+                    </p>
+                    <div class="feature-glow"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Statistiques</span>
+                <h2 class="section-title">
+                    <span class="word">Des chiffres</span>
+                    <span class="word highlight">qui parlent</span>
+                </h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass-card" data-animation="fade-up">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Utilisateurs actifs</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card" data-animation="fade-up" data-delay="0.1">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="250">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Scripts disponibles</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card" data-animation="fade-up" data-delay="0.2">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="1000000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Téléchargements</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card" data-animation="fade-up" data-delay="0.3">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="8">0</span>
+                        <span class="stat-suffix">/10</span>
+                        <p class="stat-label">Note moyenne</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="showcase" id="showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Aperçu</span>
+                <h2 class="section-title">
+                    <span class="word">Voir</span>
+                    <span class="word highlight">Writz Hub</span>
+                    <span class="word">en action</span>
+                </h2>
+            </div>
+            <div class="showcase-wrapper">
+                <div class="showcase-image" data-animation="fade-up" data-tilt>
+                    <div class="mockup-container">
+                        <div class="mockup-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="window-dot red"></span>
+                                    <span class="window-dot yellow"></span>
+                                    <span class="window-dot green"></span>
+                                </div>
+                                <span class="window-title">Writz Hub Dashboard</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="dashboard">
+                                    <div class="dashboard-sidebar">
+                                        <div class="sidebar-item active">
+                                            <span class="sidebar-icon">&#9776;</span>
+                                            <span>Tableau de bord</span>
+                                        </div>
+                                        <div class="sidebar-item">
+                                            <span class="sidebar-icon">&#9881;</span>
+                                            <span>Scripts</span>
+                                        </div>
+                                        <div class="sidebar-item">
+                                            <span class="sidebar-icon">&#9889;</span>
+                                            <span>Automatisation</span>
+                                        </div>
+                                        <div class="sidebar-item">
+                                            <span class="sidebar-icon">&#9770;</span>
+                                            <span>Paramètres</span>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-main">
+                                        <div class="main-header">
+                                            <h3>Bienvenue sur Writz Hub</h3>
+                                            <div class="main-stats">
+                                                <div class="main-stat">
+                                                    <span class="main-stat-value">1.2K</span>
+                                                    <span class="main-stat-label">Tâches aujourd'hui</span>
+                                                </div>
+                                                <div class="main-stat">
+                                                    <span class="main-stat-value">98%</span>
+                                                    <span class="main-stat-label">Taux de succès</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main-content">
+                                            <div class="chart-placeholder">
+                                                <div class="chart-bar" style="--height: 60%"></div>
+                                                <div class="chart-bar" style="--height: 80%"></div>
+                                                <div class="chart-bar" style="--height: 45%"></div>
+                                                <div class="chart-bar" style="--height: 90%"></div>
+                                                <div class="chart-bar" style="--height: 70%"></div>
+                                                <div class="chart-bar" style="--height: 55%"></div>
+                                            </div>
+                                            <div class="activity-list">
+                                                <div class="activity-item">
+                                                    <span class="activity-icon">&#10003;</span>
+                                                    <span>Script exécuté avec succès</span>
+                                                    <span class="activity-time">Il y a 2 min</span>
+                                                </div>
+                                                <div class="activity-item">
+                                                    <span class="activity-icon">&#9889;</span>
+                                                    <span>Automatisation démarrée</span>
+                                                    <span class="activity-time">Il y a 10 min</span>
+                                                </div>
+                                                <div class="activity-item">
+                                                    <span class="activity-icon">&#10003;</span>
+                                                    <span>Tâche terminée</span>
+                                                    <span class="activity-time">Il y a 1 heure</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content glass-card" data-animation="fade-up">
+                <div class="download-info">
+                    <span class="section-tag">Téléchargement</span>
+                    <h2 class="download-title">
+                        Prêt à utiliser 
+                        <span class="highlight">Writz Hub</span> ?
+                    </h2>
+                    <p class="download-subtitle">
+                        Téléchargez dès maintenant et commencez à automatiser vos tâches.
+                    </p>
+                    <ul class="download-features">
+                        <li>
+                            <span class="check-icon">&#10003;</span>
+                            <span>Mise à jour automatique</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">&#10003;</span>
+                            <span>Support 24/7</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">&#10003;</span>
+                            <span>Compatible avec tous les executors</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="download-cta">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span class="btn-content">
+                            <span class="btn-icon">&#8595;</span>
+                            <span class="btn-text">Télécharger Maintenant</span>
+                        </span>
+                        <span class="btn-glow"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">&#9632;</span>
+                        <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Le script ultime pour l'automatisation et l'optimisation.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Liens rapides</h4>
+                        <ul>
+                            <li><a href="#features">Fonctionnalités</a></li>
+                            <li><a href="#stats">Statistiques</a></li>
+                            <li><a href="#showcase">Aperçu</a></li>
+                            <li><a href="#download">Télécharger</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Communauté</h4>
+                        <ul>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Writz Hub. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
