@@ -1,0 +1,15 @@
+{
+  "name": "wrtiz-hub-landing",
+  "version": "1.0.0",
+  "description": "Writz Hub - Landing Page",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "vercel-build": "echo 'Static site - no build required'"
+  },
+  "keywords": ["writz", "hub", "script", "landing", "page"],
+  "author": "",
+  "license": "MIT"
+}
