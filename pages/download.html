@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Télécharger | Writz Hub</title>
-    <meta name="description" content="Téléchargez Writz Hub - Le script ultime pour automatiser et optimiser vos tâches.">
+    <title>Télécharger | Writz Hub - Scripts Roblox Executor</title>
+    <meta name="description" content="Téléchargez Writz Hub - Le meilleur hub de scripts Roblox pour executors. Fly, Auto Farm, AimBot, ESP et plus.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -54,12 +54,11 @@
             </a>
             <nav class="nav">
                 <a href="/" class="nav-link">Accueil</a>
-                <a href="/#features" class="nav-link">Fonctionnalités</a>
+                <a href="/#scripts" class="nav-link">Scripts</a>
                 <a href="/pages/documentation.html" class="nav-link">Documentation</a>
                 <a href="/pages/download.html" class="nav-link active">Télécharger</a>
                 <a href="/pages/blog.html" class="nav-link">Blog</a>
                 <a href="/pages/contact.html" class="nav-link">Contact</a>
-                <a href="/pages/faq.html" class="nav-link">FAQ</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -72,12 +71,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <a href="/" class="mobile-nav-link">Accueil</a>
-        <a href="/#features" class="mobile-nav-link">Fonctionnalités</a>
+        <a href="/#scripts" class="mobile-nav-link">Scripts</a>
         <a href="/pages/documentation.html" class="mobile-nav-link">Documentation</a>
         <a href="/pages/download.html" class="mobile-nav-link active">Télécharger</a>
         <a href="/pages/blog.html" class="mobile-nav-link">Blog</a>
         <a href="/pages/contact.html" class="mobile-nav-link">Contact</a>
-        <a href="/pages/faq.html" class="mobile-nav-link">FAQ</a>
     </div>
 
     <!-- Main Content -->
@@ -92,7 +90,7 @@
                         <span class="word highlight">Writz Hub</span>
                     </h1>
                     <p class="section-subtitle">
-                        Obtenez la dernière version de Writz Hub et commencez à automatiser vos tâches.
+                        Obtenez le meilleur hub de scripts Roblox pour executors et commencez à dominer vos jeux.
                     </p>
                 </div>
             </div>
@@ -101,7 +99,7 @@
         <!-- Download Options -->
         <section class="section">
             <div class="container">
-                <div class="download-options-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
                     <!-- Option 1: Direct Download -->
                     <div class="download-option glass-card" data-animation="fade-up">
                         <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
@@ -110,23 +108,23 @@
                             </div>
                             <div>
                                 <h3 style="font-size: var(--font-size-xl); font-weight: 700;">Téléchargement Direct</h3>
-                                <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Version stable recommandée</p>
+                                <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Script principal + tous les modules</p>
                             </div>
                         </div>
                         <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: var(--font-size-sm);">
-                            Téléchargez la dernière version stable de Writz Hub avec toutes les fonctionnalités incluses.
+                            Téléchargez le script principal avec tous les modules inclus. Compatible avec tous les executors supportés.
                         </p>
                         <div style="display: flex; gap: var(--space-sm);">
-                            <a href="#" class="btn btn-primary btn-block">
+                            <a href="#" class="btn btn-primary btn-block" onclick="downloadScript('main')">
                                 <span class="btn-content">
                                     <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                    <span class="btn-text">Télécharger v2.0.0</span>
+                                    <span class="btn-text">Télécharger v2.0</span>
                                 </span>
                             </a>
                         </div>
                         <div style="margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-tertiary);">
-                            <span>15.2 MB</span>
-                            <span>Windows, Mac, Linux</span>
+                            <span>5.2 MB</span>
+                            <span>Tous executors</span>
                         </div>
                     </div>
 
@@ -142,7 +140,7 @@
                             </div>
                         </div>
                         <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: var(--font-size-sm);">
-                            Accédez au dépôt GitHub pour contribuer, signaler des bugs ou voir le code source.
+                            Accédez au dépôt GitHub pour voir le code, contribuer ou signaler des bugs.
                         </p>
                         <div style="display: flex; gap: var(--space-sm);">
                             <a href="https://github.com/Travail-code/wrtiz-hub-landing" class="btn btn-secondary btn-block" target="_blank" rel="noopener noreferrer">
@@ -158,44 +156,108 @@
                         </div>
                     </div>
 
-                    <!-- Option 3: npm -->
+                    <!-- Option 3: Individual Scripts -->
                     <div class="download-option glass-card" data-animation="fade-up" data-delay="0.2">
                         <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
                             <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%); border-radius: var(--radius-lg);">
-                                <i class="fab fa-npm" style="color: var(--bg-primary); font-size: var(--font-size-xl);"></i>
+                                <i class="fas fa-file-code" style="color: var(--bg-primary); font-size: var(--font-size-xl);"></i>
                             </div>
                             <div>
-                                <h3 style="font-size: var(--font-size-xl); font-weight: 700;">npm</h3>
-                                <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Installation via npm</p>
+                                <h3 style="font-size: var(--font-size-xl); font-weight: 700;">Scripts Individuels</h3>
+                                <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Téléchargez par script</p>
                             </div>
                         </div>
                         <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: var(--font-size-sm);">
-                            Installez Writz Hub directement via npm pour une intégration facile dans vos projets.
+                            Téléchargez uniquement les scripts dont vous avez besoin.
                         </p>
-                        <div style="display: flex; gap: var(--space-sm);">
-                            <button class="btn btn-secondary btn-block" onclick="copyToClipboard('npm install writz-hub')" id="copy-npm">
-                                <span class="btn-content">
-                                    <span class="btn-icon"><i class="fas fa-copy"></i></span>
-                                    <span class="btn-text" id="copy-npm-text">Copier la commande</span>
-                                </span>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <button class="btn btn-secondary" onclick="downloadScript('fly')" style="display: flex; align-items: center; justify-content: center; gap: var(--space-sm);">
+                                <i class="fas fa-plane"></i>
+                                <span>Fly Script</span>
                             </button>
-                        </div>
-                        <div class="code-block" style="margin-top: var(--space-lg);">
-                            <div class="code-block-header">
-                                <span class="code-block-dot red"></span>
-                                <span class="code-block-dot yellow"></span>
-                                <span class="code-block-dot green"></span>
-                                <span class="code-block-title">Terminal</span>
-                            </div>
-                            <pre><code><span class="code-line">npm install writz-hub</span></code></pre>
+                            <button class="btn btn-secondary" onclick="downloadScript('autofarm')" style="display: flex; align-items: center; justify-content: center; gap: var(--space-sm);">
+                                <i class="fas fa-robot"></i>
+                                <span>Auto Farm</span>
+                            </button>
+                            <button class="btn btn-secondary" onclick="downloadScript('aimbot')" style="display: flex; align-items: center; justify-content: center; gap: var(--space-sm);">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>AimBot</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Version History -->
+        <!-- Quick Start Guide -->
         <section class="section" style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Guide</span>
+                    <h2 class="section-title">
+                        <span class="word">Mise en route</span>
+                        <span class="word highlight">rapide</span>
+                    </h2>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                    <div class="glass-card" data-animation="fade-up">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                                <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                                    <span style="font-weight: 700;">1</span>
+                                </div>
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 700;">Téléchargez</h3>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                                Téléchargez le script principal depuis cette page ou depuis GitHub.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" data-animation="fade-up" data-delay="0.1">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                                <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                                    <span style="font-weight: 700;">2</span>
+                                </div>
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 700;">Ouvrez l'executor</h3>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                                Lancez votre executor préféré (Xeno, Solara, Delta, etc.) et ouvrez Roblox.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" data-animation="fade-up" data-delay="0.2">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                                <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                                    <span style="font-weight: 700;">3</span>
+                                </div>
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 700;">Exécutez</h3>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                                Chargez le script dans votre executor et activez les fonctionnalités souhaitées.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-block" style="margin-top: var(--space-2xl);">
+                    <div class="code-block-header">
+                        <span class="code-block-dot red"></span>
+                        <span class="code-block-dot yellow"></span>
+                        <span class="code-block-dot green"></span>
+                        <span class="code-block-title">Commande d'exécution</span>
+                    </div>
+                    <pre><code><span class="code-line"><span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"</span>))()</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Version History -->
+        <section class="section">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">Historique</span>
@@ -209,7 +271,6 @@
                     <div style="display: flex; gap: var(--space-sm);">
                         <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="showVersion('all')">Toutes</button>
                         <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="showVersion('major')">Majeures</button>
-                        <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="showVersion('minor')">Mineures</button>
                     </div>
                 </div>
                 
@@ -229,22 +290,17 @@
                         <div style="padding-left: calc(40px + var(--space-md) + var(--space-md)); border-left: 2px solid var(--border-color); padding-left: var(--space-lg);">
                             <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Nouveautés</h4>
                             <ul style="list-style: none; margin-bottom: var(--space-lg);">
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Interface utilisateur complètement repensée</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Support de 8 nouveaux executors</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Système de plugins modulaire</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Tableau de bord en temps réel</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Mode sombre/clair automatique</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Nouveau script Fly v2.0 avec anti-detection amélioré</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Ajout du script Auto Farm pour Adopt Me et Blox Fruits</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; AimBot optimisé pour Blade Ball et Arsenal</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Support de 3 nouveaux executors</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Interface utilisateur repensée</li>
                             </ul>
                             <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Améliorations</h4>
                             <ul style="list-style: none; margin-bottom: var(--space-lg);">
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Performances améliorées de 40%</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Meilleure gestion des erreurs</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Documentation mise à jour</li>
-                            </ul>
-                            <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Corrections</h4>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Correction de bugs mineurs</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Amélioration de la stabilité</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Meilleure stabilité des scripts</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Réduction des risques de détection</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Performances optimisées</li>
                             </ul>
                         </div>
                     </div>
@@ -264,13 +320,13 @@
                         <div style="padding-left: calc(40px + var(--space-md) + var(--space-md)); border-left: 2px solid var(--border-color); padding-left: var(--space-lg);">
                             <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Nouveautés</h4>
                             <ul style="list-style: none; margin-bottom: var(--space-lg);">
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Ajout du script ESP</li>
                                 <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Support de Solara et Delta</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Système de logs amélioré</li>
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Commandes personnalisées</li>
                             </ul>
                             <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Corrections</h4>
                             <ul style="list-style: none;">
-                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Correction de bugs de compatibilité</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Correction de bugs dans le script Fly</li>
+                                <li style="margin-bottom: var(--space-sm); padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">&#8226; Amélioration de la compatibilité</li>
                             </ul>
                         </div>
                     </div>
@@ -289,7 +345,7 @@
                         </div>
                         <div style="padding-left: calc(40px + var(--space-md) + var(--space-md)); border-left: 2px solid var(--border-color); padding-left: var(--space-lg);">
                             <h4 style="font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-md);">Lancement initial</h4>
-                            <p style="color: var(--text-secondary);">Première version stable de Writz Hub avec les fonctionnalités de base.</p>
+                            <p style="color: var(--text-secondary);">Première version de Writz Hub avec les scripts de base : Fly, Speed Hack.</p>
                         </div>
                     </div>
                 </div>
@@ -348,11 +404,11 @@
                             <h3 style="font-size: var(--font-size-lg); font-weight: 700;">Espace disque</h3>
                         </div>
                         <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
-                            Espace disque minimal requis pour l'installation et les dépendances.
+                            Espace disque minimal requis pour l'installation.
                         </p>
                         <div style="display: flex; gap: var(--space-sm);">
-                            <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">50 Mo minimum</span>
-                            <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">100 Mo recommandé</span>
+                            <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">10 Mo minimum</span>
+                            <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">50 Mo recommandé</span>
                         </div>
                     </div>
 
@@ -381,17 +437,17 @@
             <div class="container">
                 <div class="download-content glass-card" data-animation="fade-up" style="text-align: center;">
                     <div class="download-info">
-                        <span class="section-tag">Prêt à commencer ?</span>
+                        <span class="section-tag">Prêt à dominer ?</span>
                         <h2 class="download-title">
                             Téléchargez Writz Hub 
                             <span class="highlight">maintenant</span>
                         </h2>
                         <p class="download-subtitle">
-                            Rejoignez des milliers d'utilisateurs satisfaits et commencez à automatiser vos tâches dès aujourd'hui.
+                            Rejoignez des milliers de joueurs et commencez à dominer dans Roblox avec nos scripts premium.
                         </p>
                     </div>
                     <div class="download-cta" style="margin-top: var(--space-2xl);">
-                        <a href="#" class="btn btn-primary btn-large" style="font-size: var(--font-size-lg); padding: var(--space-lg) var(--space-3xl);">
+                        <a href="#" class="btn btn-primary btn-large" style="font-size: var(--font-size-lg); padding: var(--space-lg) var(--space-3xl);" onclick="downloadScript('main')">
                             <span class="btn-content">
                                 <span class="btn-icon"><i class="fas fa-download"></i></span>
                                 <span class="btn-text">Télécharger Maintenant - Gratuit</span>
@@ -413,7 +469,7 @@
                         <span class="logo-text">Writz<span class="highlight">Hub</span></span>
                     </a>
                     <p class="footer-tagline">
-                        Le script ultime pour l'automatisation et l'optimisation de vos tâches.
+                        Le meilleur hub de scripts Roblox pour executors.
                     </p>
                     <div class="footer-social">
                         <a href="#" class="social-link" aria-label="Discord">
@@ -432,29 +488,30 @@
                 </div>
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>Produit</h4>
+                        <h4>Scripts</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Télécharger</a></li>
-                            <li><a href="#">Changelog</a></li>
-                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Fly</a></li>
+                            <li><a href="#">Auto Farm</a></li>
+                            <li><a href="#">AimBot</a></li>
+                            <li><a href="#">ESP</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Jeux</h4>
+                        <ul>
+                            <li><a href="#">Adopt Me</a></li>
+                            <li><a href="#">Blade Ball</a></li>
+                            <li><a href="#">Blox Fruits</a></li>
+                            <li><a href="#">Brookhaven</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
                         <h4>Ressources</h4>
                         <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Télécharger</a></li>
                             <li><a href="/pages/blog.html">Blog</a></li>
-                            <li><a href="/pages/faq.html">FAQ</a></li>
-                            <li><a href="/pages/contact.html">Support</a></li>
-                            <li><a href="#">Communauté</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Légale</h4>
-                        <ul>
-                            <li><a href="#">Conditions Générales</a></li>
-                            <li><a href="#">Politique de Confidentialité</a></li>
-                            <li><a href="#">Mentions Légales</a></li>
+                            <li><a href="/pages/contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
@@ -470,6 +527,9 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Writz Hub. Tous droits réservés.</p>
+                <div class="footer-credits">
+                    <span>Créé pour la communauté Roblox</span>
+                </div>
             </div>
         </div>
     </footer>
@@ -477,43 +537,30 @@
     <!-- Scripts -->
     <script src="/js/main.js"></script>
     <script>
-        // Copy to clipboard functionality
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = document.getElementById('copy-npm');
-                const btnText = document.getElementById('copy-npm-text');
-                if (btn && btnText) {
-                    const originalText = btnText.textContent;
-                    btnText.textContent = 'Copié !';
-                    btn.style.background = 'var(--accent-green)';
-                    setTimeout(() => {
-                        btnText.textContent = originalText;
-                        btn.style.background = '';
-                    }, 2000);
-                }
-            });
+        // Download script functionality
+        function downloadScript(type) {
+            // In a real implementation, this would trigger a download
+            // For now, we'll just show a message
+            const scripts = {
+                'main': 'Writz Hub v2.0 - Script Principal',
+                'fly': 'Fly Script v2.0',
+                'autofarm': 'Auto Farm Script',
+                'aimbot': 'AimBot Script'
+            };
+            
+            alert(`Téléchargement de ${scripts[type]} en cours... (Cette fonctionnalité sera implémentée avec un vrai backend)`);
         }
         
         // Version filter functionality
         function showVersion(type) {
             const items = document.querySelectorAll('.changelog-item');
             items.forEach(item => {
-                item.style.display = 'none';
+                if (type === 'all' || item.classList.contains(`version-${type}`)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
             });
-            
-            if (type === 'all') {
-                document.querySelectorAll('.version-all').forEach(item => {
-                    item.style.display = 'block';
-                });
-            } else if (type === 'major') {
-                document.querySelectorAll('.version-major').forEach(item => {
-                    item.style.display = 'block';
-                });
-            } else if (type === 'minor') {
-                document.querySelectorAll('.version-minor').forEach(item => {
-                    item.style.display = 'block';
-                });
-            }
         }
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
