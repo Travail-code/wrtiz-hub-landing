@@ -1,15 +1,21 @@
-import { useEffect, useRef } from "react";
-
-import { useIsDesktop } from "@/hooks/use-reveal";
+import { useEffect, useRef, useState } from "react";
 
 /** Custom desktop cursor: crisp dot + soft trailing ring. */
 export function CustomCursor() {
-  const desktop = useIsDesktop();
+  const [desktop, setDesktop] = useState(false);
+  
+  useEffect(() => {
+    const check = window.matchMedia('(pointer: fine) and (min-width: 768px)');
+    setDesktop(check.matches);
+    check.addEventListener('change', e => setDesktop(e.matches));
+    return () => check.removeEventListener('change', () => {});
+  }, []);
+  
+  if (!desktop) return null;
   const dotRef = useRef<HTMLDivElement | null>(null);
   const ringRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!desktop) return;
     document.body.classList.add("wz-cursor-none");
 
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -44,9 +50,7 @@ export function CustomCursor() {
       window.removeEventListener("mousemove", onMove);
       document.body.classList.remove("wz-cursor-none");
     };
-  }, [desktop]);
-
-  if (!desktop) return null;
+  }, []);
 
   return (
     <>

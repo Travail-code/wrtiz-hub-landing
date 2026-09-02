@@ -1,7 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
-
-import { cn } from "@/lib/utils";
-import { useInView } from "@/hooks/use-reveal";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 /** Fade-up reveal on scroll, with optional stagger delay. */
 export function Reveal({
@@ -13,11 +10,27 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const { ref, inView } = useInView<HTMLDivElement>();
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       ref={ref}
-      className={cn("wz-reveal", inView && "is-in", className)}
+      className={`${className || ''} transition-all duration-1000 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -39,14 +52,30 @@ export function WordReveal({
   step?: number;
   as?: "h1" | "h2" | "h3" | "p";
 }) {
-  const { ref, inView } = useInView<HTMLHeadingElement>({ threshold: 0.3 });
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Tag ref={ref as never} className={cn("inline-block", className)}>
+    <Tag ref={ref as never} className={`inline-block ${className || ''}`}>
       {text.split(" ").map((word, i) => (
         <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
           <span
-            className={cn("wz-word inline-block", inView && "is-in")}
-            style={{ transitionDelay: `${delay + i * step}ms` }}
+            className={`inline-block ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'}`}
+            style={{ transitionDelay: `${delay + i * step}ms`, transition: 'all 0.8s ease-out' }}
           >
             {word}
             {"\u00A0"}
@@ -58,34 +87,38 @@ export function WordReveal({
 }
 
 /** Typewriter cycling through phrases. */
-export function Typewriter({ words, className }: { words: string[]; className?: string }) {
-  const [index, setIndex] = useState(0);
-  const [sub, setSub] = useState(0);
-  const [deleting, setDeleting] = useState(false);
+export function Typewriter({ text, className }: { text: string; className?: string }) {
+  const [displayed, setDisplayed] = useState('');
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const current = words[index % words.length] ?? "";
-    if (!deleting && sub === current.length) {
-      const t = setTimeout(() => setDeleting(true), 1600);
-      return () => clearTimeout(t);
-    }
-    if (deleting && sub === 0) {
-      setDeleting(false);
-      setIndex((i) => (i + 1) % words.length);
-      return;
-    }
-    const t = setTimeout(
-      () => setSub((s) => s + (deleting ? -1 : 1)),
-      deleting ? 35 : 65,
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
     );
-    return () => clearTimeout(t);
-  }, [sub, deleting, index, words]);
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
-  const current = words[index % words.length] ?? "";
-  return (
-    <span className={className}>
-      {current.slice(0, sub)}
-      <span className="wz-caret" aria-hidden="true" />
-    </span>
-  );
+  useEffect(() => {
+    if (!inView) return;
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < text.length) {
+        setDisplayed(text.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
+    return () => clearInterval(interval);
+  }, [inView, text]);
+
+  return <span ref={ref} className={className}>{displayed}</span>;
 }
