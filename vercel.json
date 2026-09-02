@@ -1,32 +1,28 @@
 {
   "version": 2,
-  "builds": [],
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pages/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/*.js",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "$1"
-    },
-    {
-      "src": "/",
-      "dest": "index.html"
     }
   ],
-  "rewrites": [
-    {
-      "source": "/pages/:path*",
-      "destination": "pages/:path*"
-    },
-    {
-      "source": "/css/:path*",
-      "destination": "css/:path*"
-    },
-    {
-      "source": "/js/:path*",
-      "destination": "js/:path*"
-    },
-    {
-      "source": "/assets/:path*",
-      "destination": "assets/:path*"
-    }
-  ]
+  "outputDirectory": "."
 }
