@@ -1,65 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Writz Hub - Scripts Roblox</title>
-    <meta name="description" content="Questions fréquentes sur Writz Hub - Réponses aux questions courantes sur les scripts Roblox pour executors.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-    
-    <!-- Styles -->
+    <title>FAQ | WritzHub</title>
+    <meta name="description" content="WritzHub FAQ - Frequently Asked Questions">
     <link rel="stylesheet" href="/css/styles.css">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    
-    <!-- Background Canvas -->
     <canvas id="particles-canvas"></canvas>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-        </span>
-    </div>
-
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="/" class="logo">
                 <span class="logo-icon">&#9632;</span>
-                <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                <span class="logo-text">WritzHub</span>
             </a>
             <nav class="nav">
-                <a href="/" class="nav-link">Accueil</a>
+                <a href="/" class="nav-link">Home</a>
                 <a href="/#scripts" class="nav-link">Scripts</a>
-                <a href="/pages/documentation.html" class="nav-link">Documentation</a>
-                <a href="/pages/download.html" class="nav-link">Télécharger</a>
+                <a href="/pages/documentation.html" class="nav-link">Docs</a>
+                <a href="/pages/download.html" class="nav-link">Download</a>
                 <a href="/pages/blog.html" class="nav-link">Blog</a>
                 <a href="/pages/contact.html" class="nav-link">Contact</a>
-                <a href="/pages/faq.html" class="nav-link active">FAQ</a>
+                <a href="/pages/faq.html" class="nav-link">FAQ</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -69,300 +37,78 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="/" class="mobile-nav-link">Accueil</a>
+        <a href="/" class="mobile-nav-link">Home</a>
         <a href="/#scripts" class="mobile-nav-link">Scripts</a>
-        <a href="/pages/documentation.html" class="mobile-nav-link">Documentation</a>
-        <a href="/pages/download.html" class="mobile-nav-link">Télécharger</a>
+        <a href="/pages/documentation.html" class="mobile-nav-link">Docs</a>
+        <a href="/pages/download.html" class="mobile-nav-link">Download</a>
         <a href="/pages/blog.html" class="mobile-nav-link">Blog</a>
         <a href="/pages/contact.html" class="mobile-nav-link">Contact</a>
-        <a href="/pages/faq.html" class="mobile-nav-link active">FAQ</a>
+        <a href="/pages/faq.html" class="mobile-nav-link">FAQ</a>
     </div>
 
-    <!-- Main Content -->
     <main>
-        <!-- Page Header -->
         <section class="section" style="padding-top: 120px;">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">FAQ</span>
-                    <h1 class="section-title" style="font-size: var(--font-size-6xl);">
-                        <span class="word">Questions</span>
-                        <span class="word highlight">fréquentes</span>
-                    </h1>
-                    <p class="section-subtitle">
-                        Trouvez des réponses aux questions les plus courantes sur Writz Hub et nos scripts Roblox.
-                    </p>
+                    <h1 class="section-title">Frequently Asked Questions</h1>
+                    <p class="section-subtitle">Find answers to common questions about WritzHub</p>
                 </div>
             </div>
         </section>
 
-        <!-- Search Bar -->
-        <section class="section">
-            <div class="container">
-                <div style="max-width: 600px; margin: 0 auto;" data-animation="fade-up">
-                    <div style="position: relative;">
-                        <input type="text" id="faq-search" placeholder="Rechercher une question..." 
-                               style="width: 100%; padding: var(--space-md) var(--space-xl); background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: var(--radius-xl); font-size: var(--font-size-base); color: var(--text-primary); backdrop-filter: blur(20px);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-                             style="position: absolute; right: var(--space-lg); top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-secondary);">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Categories -->
-        <section class="section">
-            <div class="container">
-                <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-2xl);">
-                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('all')">Toutes</button>
-                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('getting-started')">Débuter</button>
-                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('scripts')">Scripts</button>
-                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('executors')">Executors</button>
-                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('safety')">Sécurité</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ List -->
         <section class="section">
             <div class="container">
                 <div class="faq-grid">
-                    <!-- Getting Started -->
-                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up">
-                        <button class="faq-question">
-                            Qu'est-ce que Writz Hub ?
-                        </button>
+                    <div class="faq-item" data-animation="fade-up">
+                        <button class="faq-question">What is WritzHub?</button>
                         <div class="faq-answer">
-                            <p>Writz Hub est un hub de scripts Roblox conçu pour fonctionner avec les principaux executors. Nous proposons des scripts comme Fly, Auto Farm, AimBot, ESP et bien plus pour vous donner un avantage dans vos jeux préférés.</p>
+                            <p>WritzHub is a collection of Roblox scripts designed to work with popular executors. We provide scripts like Fly, Auto Farm, AimBot, ESP, and more to give you an advantage in your favorite Roblox games.</p>
                         </div>
                     </div>
-
-                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up" data-delay="0.1">
-                        <button class="faq-question">
-                            Comment commencer avec Writz Hub ?
-                        </button>
+                    <div class="faq-item" data-animation="fade-up" data-delay="0.1">
+                        <button class="faq-question">How do I install WritzHub?</button>
                         <div class="faq-answer">
-                            <p>Téléchargez nos scripts depuis la page Téléchargement, ouvrez votre executor préféré (Xeno, Solara, Delta, etc.), chargez le script et exécutez-le. Consultez notre documentation pour des instructions détaillées.</p>
+                            <p>Download our scripts from the Download page, open your executor (Xeno, Solara, Delta, etc.), load the script, and execute it. Check our Documentation for detailed instructions.</p>
                         </div>
                     </div>
-
-                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up" data-delay="0.2">
-                        <button class="faq-question">
-                            Writz Hub est-il gratuit ?
-                        </button>
+                    <div class="faq-item" data-animation="fade-up" data-delay="0.2">
+                        <button class="faq-question">Is WritzHub free?</button>
                         <div class="faq-answer">
-                            <p>Oui, Writz Hub est entièrement gratuit. Tous nos scripts sont disponibles sans frais. Nous proposons également des versions premium avec des fonctionnalités avancées pour les utilisateurs sérieux.</p>
+                            <p>Yes, WritzHub is completely free. All our scripts are available without any charges.</p>
                         </div>
                     </div>
-
-                    <!-- Scripts -->
-                    <div class="faq-item glass-card" data-category="scripts" data-animation="fade-up" data-delay="0.3">
-                        <button class="faq-question">
-                            Quels scripts sont disponibles ?
-                        </button>
+                    <div class="faq-item" data-animation="fade-up" data-delay="0.3">
+                        <button class="faq-question">Which executors are supported?</button>
                         <div class="faq-answer">
-                            <p>Nous proposons plusieurs catégories de scripts :</p>
-                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Fly - Voler librement dans les jeux</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Auto Farm - Automatiser la collecte de ressources</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">AimBot - Viser automatiquement vos cibles</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">ESP - Voir à travers les murs</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Speed Hack - Augmenter votre vitesse</li>
-                            </ul>
+                            <p>WritzHub supports Xeno, Solara, Delta, Eclipse, Krnl, Fluxus, JJSploit, Oxygen, and more. Check our Documentation for the full list.</p>
                         </div>
                     </div>
-
-                    <div class="faq-item glass-card" data-category="scripts" data-animation="fade-up" data-delay="0.4">
-                        <button class="faq-question">
-                            Le script Fly fonctionne-t-il dans tous les jeux ?
-                        </button>
+                    <div class="faq-item" data-animation="fade-up" data-delay="0.4">
+                        <button class="faq-question">Can I get banned for using scripts?</button>
                         <div class="faq-answer">
-                            <p>Notre script Fly est conçu pour fonctionner dans la plupart des jeux Roblox. Cependant, certains jeux avec des systèmes anti-cheat avancés peuvent le détecter. Nous travaillons constamment pour améliorer la détection et la compatibilité.</p>
+                            <p>There is always a risk of getting banned when using scripts in Roblox. We recommend using scripts responsibly, disabling them when not in use, and avoiding games with advanced anti-cheat systems.</p>
                         </div>
                     </div>
-
-                    <div class="faq-item glass-card" data-category="scripts" data-animation="fade-up" data-delay="0.5">
-                        <button class="faq-question">
-                            Puis-je utiliser plusieurs scripts en même temps ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Oui, vous pouvez utiliser plusieurs scripts simultanément. Cependant, nous recommandons de ne pas en utiliser trop (plus de 3-4) pour éviter les problèmes de performance, les conflits entre scripts et les détections par les anti-cheat.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="scripts" data-animation="fade-up" data-delay="0.6">
-                        <button class="faq-question">
-                            Comment activer/désactiver un script ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Une fois le script chargé dans votre executor, vous pouvez utiliser les commandes suivantes dans la console de l'executor :</p>
-                            <div class="code-block" style="margin-top: var(--space-md);">
-                                <div class="code-block-header">
-                                    <span class="code-block-dot red"></span>
-                                    <span class="code-block-dot yellow"></span>
-                                    <span class="code-block-dot green"></span>
-                                    <span class="code-block-title">Executor Console</span>
-                                </div>
-                                <pre><code><span class="code-line"><span class="code-comment">-- Activer Fly</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleFly</span>(<span class="code-boolean">true</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Désactiver Fly</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleFly</span>(<span class="code-boolean">false</span>)</span></code></pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Executors -->
-                    <div class="faq-item glass-card" data-category="executors" data-animation="fade-up" data-delay="0.7">
-                        <button class="faq-question">
-                            Quels executors sont supportés ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Writz Hub est testé et optimisé pour les executors suivants :</p>
-                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Xeno - Gratuit, bon pour débuter</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Solara - Premium, excellent pour les scripts avancés</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Delta - Premium, très stable</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Eclipse - Gratuit, léger et rapide</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Krnl - Gratuit, populaire</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Fluxus - Premium, bon pour les jeux récents</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">JJSploit - Gratuit, simple d'utilisation</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Oxygen - Gratuit, bon pour les tests</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="executors" data-animation="fade-up" data-delay="0.8">
-                        <button class="faq-question">
-                            Quel executor choisir ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Voici nos recommandations selon votre niveau et vos besoins :</p>
-                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);"><strong>Débutants :</strong> Xeno ou Eclipse (gratuits et faciles à utiliser)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);"><strong>Joueurs sérieux :</strong> Solara ou Delta (payants mais plus puissants et stables)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);"><strong>Tests :</strong> JJSploit ou Oxygen (gratuits)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="executors" data-animation="fade-up" data-delay="0.9">
-                        <button class="faq-question">
-                            Comment installer un executor ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>L'installation des executors varie selon le modèle. Voici les étapes générales :</p>
-                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Téléchargez l'executor depuis le site officiel</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Exécutez le fichier d'installation</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Suivez les instructions à l'écran</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Ouvrez l'executor et connectez-vous à Roblox</li>
-                            </ol>
-                            <p style="margin-top: var(--space-md); color: var(--text-secondary);">Note : Certains executors nécessitent un key système ou un abonnement.</p>
-                        </div>
-                    </div>
-
-                    <!-- Safety -->
-                    <div class="faq-item glass-card" data-category="safety" data-animation="fade-up" data-delay="1.0">
-                        <button class="faq-question">
-                            Est-ce que je peux me faire bannir ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Oui, il y a toujours un risque de se faire bannir lorsque vous utilisez des scripts dans Roblox. Cependant, vous pouvez minimiser ce risque en suivant ces conseils :</p>
-                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">N'utilisez pas de scripts dans les jeux avec anti-cheat avancé</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Désactivez les scripts quand vous ne les utilisez pas</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">N'utilisez pas trop de scripts en même temps</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Utilisez un compte alternatif pour tester les scripts</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Évitez de vous faire signaler par d'autres joueurs</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="safety" data-animation="fade-up" data-delay="1.1">
-                        <button class="faq-question">
-                            Comment éviter les détections ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Nos scripts incluent des systèmes anti-detection, mais voici quelques conseils supplémentaires :</p>
-                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Limitez le temps d'utilisation des scripts (1-2 heures max)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Évitez d'utiliser des scripts dans les mêmes jeux trop souvent</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Utilisez des valeurs modérées (ex: vitesse de fly à 30-50)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Mettez à jour régulièrement nos scripts pour les dernières protections</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="safety" data-animation="fade-up" data-delay="1.2">
-                        <button class="faq-question">
-                            Que faire si je me fais bannir ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Si vous vous faites bannir :</p>
-                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Attendez la fin du ban (généralement 1-7 jours pour un premier ban)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Ne créez pas un nouveau compte immédiatement (Roblox peut détecter cela)</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Évitez d'utiliser des scripts pendant un certain temps après le ban</li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Utilisez des valeurs de script plus basses à l'avenir</li>
-                            </ol>
-                            <p style="margin-top: var(--space-md); color: var(--text-secondary);">Note : Nous ne pouvons pas vous aider à récupérer un compte banni.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item glass-card" data-category="safety" data-animation="fade-up" data-delay="1.3">
-                        <button class="faq-question">
-                            Vos scripts contiennent-ils des virus ?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Non, tous nos scripts sont 100% sûrs et ne contiennent aucun virus, malware ou logiciel espion. Vous pouvez vérifier nos scripts sur GitHub pour voir le code source vous-même. Nous utilisons des pratiques de développement sécurisées et nos scripts sont testés par la communauté.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: var(--space-2xl);">
-                    <p style="color: var(--text-secondary);">Vous n'avez pas trouvé la réponse à votre question ?</p>
-                    <a href="/pages/contact.html" class="btn btn-primary" style="margin-top: var(--space-lg);">
-                        <span class="btn-content">
-                            <span class="btn-text">Contactez-nous</span>
-                            <span class="btn-icon" style="margin-left: var(--space-sm);">&#8594;</span>
-                        </span>
-                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <span class="logo-icon">&#9632;</span>
-                        <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                        <span class="logo-text">WritzHub</span>
                     </a>
-                    <p class="footer-tagline">
-                        Le meilleur hub de scripts Roblox pour executors.
-                    </p>
+                    <p class="footer-tagline">Roblox Executor Scripts</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -376,7 +122,7 @@
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>Jeux</h4>
+                        <h4>Games</h4>
                         <ul>
                             <li><a href="#">Adopt Me</a></li>
                             <li><a href="#">Blade Ball</a></li>
@@ -385,78 +131,23 @@
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>Ressources</h4>
+                        <h4>Links</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Télécharger</a></li>
+                            <li><a href="#">Docs</a></li>
+                            <li><a href="#">Download</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Social</h4>
-                        <ul>
-                            <li><a href="#">Discord</a></li>
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">YouTube</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Writz Hub. Tous droits réservés.</p>
+                <p>&copy; 2025 WritzHub</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="/js/main.js"></script>
-    <script>
-        // FAQ Filter Functionality
-        function filterFAQ(category) {
-            const allItems = document.querySelectorAll('.faq-item');
-            
-            allItems.forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            // Update active button
-            document.querySelectorAll('button[onclick^="filterFAQ"]').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-        
-        // FAQ Search Functionality
-        document.getElementById('faq-search').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const allItems = document.querySelectorAll('.faq-item');
-            
-            allItems.forEach(item => {
-                const question = item.querySelector('.faq-question').textContent.toLowerCase();
-                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                
-                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-        
-        // Set first button as active by default
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstBtn = document.querySelector('button[onclick^="filterFAQ"]');
-            if (firstBtn) {
-                firstBtn.classList.add('active');
-            }
-        });
-    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

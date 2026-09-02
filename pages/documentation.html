@@ -1,62 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation | Writz Hub - Scripts Roblox</title>
-    <meta name="description" content="Documentation complète de Writz Hub - Comment installer et utiliser nos scripts Roblox pour executors.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-    
-    <!-- Styles -->
+    <title>Docs | WritzHub</title>
+    <meta name="description" content="WritzHub Documentation - Roblox Executor Scripts">
     <link rel="stylesheet" href="/css/styles.css">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    
-    <!-- Background Canvas -->
     <canvas id="particles-canvas"></canvas>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-        </span>
-    </div>
-
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="/" class="logo">
                 <span class="logo-icon">&#9632;</span>
-                <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                <span class="logo-text">WritzHub</span>
             </a>
             <nav class="nav">
-                <a href="/" class="nav-link">Accueil</a>
+                <a href="/" class="nav-link">Home</a>
                 <a href="/#scripts" class="nav-link">Scripts</a>
-                <a href="/pages/documentation.html" class="nav-link active">Documentation</a>
-                <a href="/pages/download.html" class="nav-link">Télécharger</a>
+                <a href="/pages/documentation.html" class="nav-link">Docs</a>
+                <a href="/pages/download.html" class="nav-link">Download</a>
                 <a href="/pages/blog.html" class="nav-link">Blog</a>
                 <a href="/pages/contact.html" class="nav-link">Contact</a>
             </nav>
@@ -68,508 +36,194 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="/" class="mobile-nav-link">Accueil</a>
+        <a href="/" class="mobile-nav-link">Home</a>
         <a href="/#scripts" class="mobile-nav-link">Scripts</a>
-        <a href="/pages/documentation.html" class="mobile-nav-link active">Documentation</a>
-        <a href="/pages/download.html" class="mobile-nav-link">Télécharger</a>
+        <a href="/pages/documentation.html" class="mobile-nav-link">Docs</a>
+        <a href="/pages/download.html" class="mobile-nav-link">Download</a>
         <a href="/pages/blog.html" class="mobile-nav-link">Blog</a>
         <a href="/pages/contact.html" class="mobile-nav-link">Contact</a>
     </div>
 
-    <!-- Main Content -->
     <main>
-        <!-- Page Header -->
         <section class="section" style="padding-top: 120px;">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">Documentation</span>
-                    <h1 class="section-title" style="font-size: var(--font-size-6xl);">
-                        <span class="word">Documentation</span>
-                        <span class="word highlight">Writz Hub</span>
-                    </h1>
-                    <p class="section-subtitle">
-                        Apprenez à installer et utiliser nos scripts Roblox pour executors.
-                    </p>
+                    <h1 class="section-title">WritzHub Docs</h1>
+                    <p class="section-subtitle">Roblox Executor Scripts Documentation</p>
                 </div>
             </div>
         </section>
 
-        <!-- Documentation Tabs -->
         <section class="section">
             <div class="container">
-                <div class="doc-tabs">
-                    <a href="#getting-started" class="doc-tab active" data-target="#getting-started">Débuter</a>
-                    <a href="#installation" class="doc-tab" data-target="#installation">Installation</a>
-                    <a href="#scripts" class="doc-tab" data-target="#scripts">Scripts</a>
-                    <a href="#executors" class="doc-tab" data-target="#executors">Executors</a>
-                    <a href="#troubleshooting" class="doc-tab" data-target="#troubleshooting">Dépannage</a>
+                <div class="scripts-grid">
+                    <article class="script-card" data-animation="fade-up">
+                        <div class="script-header">
+                            <div class="script-icon"><i class="fas fa-book"></i></div>
+                            <h3 class="script-title">Getting Started</h3>
+                        </div>
+                        <p class="script-description">Learn how to install and use WritzHub scripts with your executor.</p>
+                    </article>
+                    <article class="script-card" data-animation="fade-up" data-delay="0.1">
+                        <div class="script-header">
+                            <div class="script-icon"><i class="fas fa-download"></i></div>
+                            <h3 class="script-title">Installation</h3>
+                        </div>
+                        <p class="script-description">Step-by-step guide to install WritzHub on your executor.</p>
+                    </article>
+                    <article class="script-card" data-animation="fade-up" data-delay="0.2">
+                        <div class="script-header">
+                            <div class="script-icon"><i class="fas fa-code"></i></div>
+                            <h3 class="script-title">Script Commands</h3>
+                        </div>
+                        <p class="script-description">Complete list of commands for all WritzHub scripts.</p>
+                    </article>
+                    <article class="script-card" data-animation="fade-up" data-delay="0.3">
+                        <div class="script-header">
+                            <div class="script-icon"><i class="fas fa-cogs"></i></div>
+                            <h3 class="script-title">Executors</h3>
+                        </div>
+                        <p class="script-description">List of supported executors and compatibility guide.</p>
+                    </article>
                 </div>
                 
-                <!-- Getting Started -->
-                <div id="getting-started" class="doc-content active">
-                    <div class="mt-xl">
-                        <h3>Bienvenue sur Writz Hub</h3>
-                        <p class="mt-xl">
-                            Writz Hub est un hub de scripts Roblox conçu pour fonctionner avec les principaux executors. 
-                            Nos scripts vous permettent d'avoir un avantage dans vos jeux préférés avec des fonctionnalités 
-                            comme le Fly, l'Auto Farm, l'AimBot, l'ESP et bien plus.
-                        </p>
-                        
-                        <div class="mt-xl">
-                            <h4>Fonctionnalités principales</h4>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg);">
-                                <div class="glass-card" style="padding: var(--space-lg);">
-                                    <h5 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--space-sm);">Fly</h5>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
-                                        Voler librement dans n'importe quel jeu Roblox avec contrôle de vitesse.
-                                    </p>
+                <div style="margin-top: var(--space-4xl);">
+                    <h2 class="section-title">Installation</h2>
+                    <p style="color: var(--text-secondary); margin: var(--space-lg) 0;">Follow these steps to install WritzHub:</p>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--space-xl); margin: var(--space-lg) 0;">
+                        <h4 style="margin-bottom: var(--space-md);">Method 1: Direct Download</h4>
+                        <ol style="padding-left: var(--space-xl);">
+                            <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Download script from <a href="/pages/download.html" style="color: var(--text-primary);">Download page</a></li>
+                            <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Open your executor (Xeno, Solara, Delta, etc.)</li>
+                            <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Load the script in your executor</li>
+                            <li style="color: var(--text-secondary);">Execute the script</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--space-xl); margin: var(--space-lg) 0;">
+                        <h4 style="margin-bottom: var(--space-md);">Method 2: Direct Command</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">Copy and paste this command in your executor:</p>
+                        <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); font-family: 'JetBrains Mono', monospace; font-size: var(--font-size-sm); overflow-x: auto;">
+                            <code>loadstring(game:HttpGet("https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/script.lua"))()</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: var(--space-4xl);">
+                    <h2 class="section-title">Script Commands</h2>
+                    <p style="color: var(--text-secondary); margin: var(--space-lg) 0;">Control WritzHub scripts with these commands:</p>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--space-xl); margin: var(--space-lg) 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                            <div>
+                                <h4 style="margin-bottom: var(--space-md);">Fly</h4>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleFly(true)</code>
                                 </div>
-                                <div class="glass-card" style="padding: var(--space-lg);">
-                                    <h5 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--space-sm);">Auto Farm</h5>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
-                                        Automatisez la collecte de ressources et d'objets rares.
-                                    </p>
-                                </div>
-                                <div class="glass-card" style="padding: var(--space-lg);">
-                                    <h5 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--space-sm);">AimBot</h5>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
-                                        Visez automatiquement vos cibles avec une précision parfaite.
-                                    </p>
-                                </div>
-                                <div class="glass-card" style="padding: var(--space-lg);">
-                                    <h5 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--space-sm);">ESP</h5>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
-                                        Voyez à travers les murs avec affichage des joueurs et objets.
-                                    </p>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleFly(false)</code>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Jeux supportés</h4>
-                            <p class="mt-xl">
-                                Nos scripts fonctionnent avec les jeux Roblox les plus populaires :
-                            </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg);">
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Adopt Me</span>
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Blade Ball</span>
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Blox Fruits</span>
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Brookhaven</span>
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Tower of Hell</span>
-                                <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: var(--font-size-sm);">Arsenal</span>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-md);">Auto Farm</h4>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleAutoFarm(true)</code>
+                                </div>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleAutoFarm(false)</code>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-md);">AimBot</h4>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleAimBot(true)</code>
+                                </div>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleAimBot(false)</code>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-md);">ESP</h4>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleESP(true)</code>
+                                </div>
+                                <div style="background: var(--bg-tertiary); border-radius: var(--radius-md); padding: var(--space-md);">
+                                    <code style="font-family: 'JetBrains Mono', monospace;">WritzHub.ToggleESP(false)</code>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Installation -->
-                <div id="installation" class="doc-content">
-                    <div class="mt-xl">
-                        <h3>Installation</h3>
-                        <p class="mt-xl">
-                            Suivez ces étapes simples pour installer Writz Hub sur votre executor préféré.
-                        </p>
-                        
-                        <div class="mt-xl">
-                            <h4>Méthode 1: Téléchargement direct (Recommandé)</h4>
-                            <ol style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Téléchargez le fichier <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">writz-hub.lua</code> depuis notre <a href="/pages/download.html" style="color: var(--accent-blue);">page de téléchargement</a>
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Ouvrez votre executor (Xeno, Solara, Delta, etc.)
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Chargez le script dans votre executor
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Exécutez le script avec la commande <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">loadstring(game:HttpGet("PASTE_LINK_HERE"))()</code>
-                                </li>
-                            </ol>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Méthode 2: Via GitHub</h4>
-                            <ol style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Allez sur notre dépôt GitHub: <a href="https://github.com/Travail-code/wrtiz-hub-landing" style="color: var(--accent-blue);" target="_blank">github.com/Travail-code/wrtiz-hub-landing</a>
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Copiez le contenu du fichier <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">main.lua</code>
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Collez-le dans votre executor et exécutez
-                                </li>
-                            </ol>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Méthode 3: Commande directe</h4>
-                            <p class="mt-xl">
-                                Copiez et collez cette commande directement dans votre executor:
-                            </p>
-                            <div class="code-block">
-                                <div class="code-block-header">
-                                    <span class="code-block-dot red"></span>
-                                    <span class="code-block-dot yellow"></span>
-                                    <span class="code-block-dot green"></span>
-                                    <span class="code-block-title">Executor</span>
-                                </div>
-                                <pre><code><span class="code-line"><span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/script.lua"</span>))()</span></code></pre>
+                <div style="margin-top: var(--space-4xl);">
+                    <h2 class="section-title">Supported Executors</h2>
+                    <p style="color: var(--text-secondary); margin: var(--space-lg) 0;">WritzHub is tested and optimized for these executors:</p>
+                    
+                    <div class="scripts-grid">
+                        <article class="script-card" data-animation="fade-up">
+                            <div class="script-header">
+                                <div class="script-icon">X</div>
+                                <h3 class="script-title">Xeno</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Scripts -->
-                <div id="scripts" class="doc-content">
-                    <div class="mt-xl">
-                        <h3>Liste des Scripts</h3>
-                        <p class="mt-xl">
-                            Découvrez tous nos scripts disponibles pour différents jeux et fonctionnalités.
-                        </p>
-                        
-                        <div class="mt-xl">
-                            <h4>Scripts Universels (Tous les jeux)</h4>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg);">
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%); border-radius: var(--radius-md);">
-                                            <i class="fas fa-plane" style="color: var(--bg-primary);"></i>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Fly Script</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Voler librement avec contrôle de vitesse et anti-detection.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Tous jeux</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Premium</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.1">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%); border-radius: var(--radius-md);">
-                                            <i class="fas fa-robot" style="color: var(--bg-primary);"></i>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Auto Farm</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Automatisez la collecte de ressources et d'objets rares.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Adopt Me</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Premium</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.2">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-orange) 0%, #ff4500 100%); border-radius: var(--radius-md);">
-                                            <i class="fas fa-crosshairs" style="color: var(--bg-primary);"></i>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">AimBot</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Visez automatiquement vos ennemis avec une précision parfaite.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Blade Ball</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Arsenal</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.3">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-purple) 0%, #9370db 100%); border-radius: var(--radius-md);">
-                                            <i class="fas fa-eye" style="color: var(--bg-primary);"></i>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">ESP</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Voyez à travers les murs avec affichage des joueurs et objets.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Tous jeux</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Premium</span>
-                                    </div>
-                                </div>
+                            <p class="script-description">Free executor. Good for beginners.</p>
+                        </article>
+                        <article class="script-card" data-animation="fade-up" data-delay="0.1">
+                            <div class="script-header">
+                                <div class="script-icon">S</div>
+                                <h3 class="script-title">Solara</h3>
                             </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Commandes des Scripts</h4>
-                            <div class="code-block" style="margin-top: var(--space-lg);">
-                                <div class="code-block-header">
-                                    <span class="code-block-dot red"></span>
-                                    <span class="code-block-dot yellow"></span>
-                                    <span class="code-block-dot green"></span>
-                                    <span class="code-block-title">Commandes Writz Hub</span>
-                                </div>
-                                <pre><code><span class="code-line"><span class="code-comment">-- Activer/Désactiver Fly</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleFly</span>(<span class="code-boolean">true</span>/<span class="code-boolean">false</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Activer/Désactiver Auto Farm</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleAutoFarm</span>(<span class="code-boolean">true</span>/<span class="code-boolean">false</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Définir la vitesse de Fly (1-100)</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">SetFlySpeed</span>(<span class="code-number">50</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Activer/Désactiver AimBot</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleAimBot</span>(<span class="code-boolean">true</span>/<span class="code-boolean">false</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Définir le FOV de l'AimBot</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">SetAimBotFOV</span>(<span class="code-number">30</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Activer/Désactiver ESP</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleESP</span>(<span class="code-boolean">true</span>/<span class="code-boolean">false</span>)</span>
-
-<span class="code-line"><span class="code-comment">-- Désactiver tous les scripts</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">DisableAll</span>()</span>
-
-<span class="code-line"><span class="code-comment">-- Afficher le menu UI</span></span>
-<span class="code-line"><span class="code-var">WritzHub</span>.<span class="code-method">ToggleUI</span>()</span></code></pre>
+                            <p class="script-description">Premium executor. Excellent performance.</p>
+                        </article>
+                        <article class="script-card" data-animation="fade-up" data-delay="0.2">
+                            <div class="script-header">
+                                <div class="script-icon">D</div>
+                                <h3 class="script-title">Delta</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Executors -->
-                <div id="executors" class="doc-content">
-                    <div class="mt-xl">
-                        <h3>Executors Compatibles</h3>
-                        <p class="mt-xl">
-                            Writz Hub est testé et optimisé pour fonctionner avec les principaux executors Roblox.
-                        </p>
-                        
-                        <div class="mt-xl">
-                            <h4>Executors Supportés</h4>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg);">
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                                            <span style="font-weight: 700;">X</span>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Xeno</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Executor gratuit avec une bonne détection. Fonctionne parfaitement avec Writz Hub.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--accent-green); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--bg-primary);">Recommandé</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Gratuit</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.1">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                                            <span style="font-weight: 700;">S</span>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Solara</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Executor premium avec d'excellentes performances. Compatible à 100% avec Writz Hub.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--accent-blue); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--bg-primary);">Premium</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Payant</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.2">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                                            <span style="font-weight: 700;">D</span>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Delta</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Executor puissant avec une bonne stabilité. Fonctionne bien avec Writz Hub.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--accent-blue); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--bg-primary);">Premium</span>
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Payant</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="glass-card" style="padding: var(--space-lg);" data-animation="fade-up" data-delay="0.3">
-                                    <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-                                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                                            <span style="font-weight: 700;">E</span>
-                                        </div>
-                                        <h5 style="font-size: var(--font-size-lg); font-weight: 700;">Eclipse</h5>
-                                    </div>
-                                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-md);">
-                                        Executor léger et rapide. Compatible avec la plupart des scripts Writz Hub.
-                                    </p>
-                                    <div style="display: flex; gap: var(--space-sm);">
-                                        <span style="background: var(--bg-tertiary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Gratuit</span>
-                                    </div>
-                                </div>
+                            <p class="script-description">Premium executor. Very stable.</p>
+                        </article>
+                        <article class="script-card" data-animation="fade-up" data-delay="0.3">
+                            <div class="script-header">
+                                <div class="script-icon">E</div>
+                                <h3 class="script-title">Eclipse</h3>
                             </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Comment choisir son executor ?</h4>
-                            <p class="mt-xl">
-                                Voici quelques conseils pour choisir le meilleur executor selon vos besoins :
-                            </p>
-                            <ul style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    <strong>Pour les débutants :</strong> Xeno ou Eclipse (gratuits et faciles à utiliser)
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    <strong>Pour les joueurs sérieux :</strong> Solara ou Delta (payants mais plus puissants)
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    <strong>Pour les tests :</strong> JJSploit ou Krnl (gratuits mais moins stables)
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Problèmes de compatibilité ?</h4>
-                            <p class="mt-xl">
-                                Si un script ne fonctionne pas avec votre executor :
-                            </p>
-                            <ol style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Vérifiez que votre executor est à jour
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Essayez un autre executor de la liste ci-dessus
-                                </li>
-                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                    Contactez notre support sur Discord
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Troubleshooting -->
-                <div id="troubleshooting" class="doc-content">
-                    <div class="mt-xl">
-                        <h3>Dépannage</h3>
-                        <p class="mt-xl">
-                            Solutions aux problèmes courants avec Writz Hub et les executors.
-                        </p>
-                        
-                        <div class="mt-xl">
-                            <h4>Le script ne s'exécute pas</h4>
-                            <div style="margin-top: var(--space-lg);">
-                                <h5 style="font-size: var(--font-size-lg); margin-bottom: var(--space-sm);">Problèmes possibles :</h5>
-                                <ul style="padding-left: var(--space-xl);">
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Votre executor n'est pas compatible. Essayez Xeno, Solara ou Delta.
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Le script n'est pas correctement chargé. Vérifiez la commande loadstring.
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Votre executor est obsolète. Mettez-le à jour.
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Roblox a mis à jour son anti-cheat. Attendez une mise à jour de Writz Hub.
-                                    </li>
-                                </ul>
+                            <p class="script-description">Free executor. Light and fast.</p>
+                        </article>
+                        <article class="script-card" data-animation="fade-up" data-delay="0.4">
+                            <div class="script-header">
+                                <div class="script-icon">K</div>
+                                <h3 class="script-title">Krnl</h3>
                             </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Je me fais kick/bannir</h4>
-                            <div style="margin-top: var(--space-lg);">
-                                <h5 style="font-size: var(--font-size-lg); margin-bottom: var(--space-sm);">Conseils pour éviter les bans :</h5>
-                                <ul style="padding-left: var(--space-xl);">
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        N'utilisez pas plusieurs scripts en même temps
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Désactivez les scripts quand vous ne les utilisez pas
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Évitez d'utiliser des scripts dans les jeux avec anti-cheat avancé
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Utilisez un compte alternatif pour tester les scripts
-                                    </li>
-                                </ul>
+                            <p class="script-description">Free executor. Popular choice.</p>
+                        </article>
+                        <article class="script-card" data-animation="fade-up" data-delay="0.5">
+                            <div class="script-header">
+                                <div class="script-icon">F</div>
+                                <h3 class="script-title">Fluxus</h3>
                             </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Le script plante mon jeu</h4>
-                            <div style="margin-top: var(--space-lg);">
-                                <h5 style="font-size: var(--font-size-lg); margin-bottom: var(--space-sm);">Solutions :</h5>
-                                <ol style="padding-left: var(--space-xl);">
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Rechargez le jeu (F5) et réessayez
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Désactivez tous les autres scripts
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Essayez avec un autre executor
-                                    </li>
-                                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">
-                                        Vérifiez que vous avez copié correctement le script
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-xl">
-                            <h4>Support</h4>
-                            <p class="mt-xl">
-                                Si vous rencontrez toujours des problèmes, contactez-nous :
-                            </p>
-                            <ul style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
-                                <li style="margin-bottom: var(--space-sm);">
-                                    <a href="#" style="color: var(--accent-blue);">Rejoindre notre Discord</a> pour du support en direct
-                                </li>
-                                <li style="margin-bottom: var(--space-sm);">
-                                    <a href="/pages/contact.html" style="color: var(--accent-blue);">Formulaire de contact</a>
-                                </li>
-                                <li style="margin-bottom: var(--space-sm);">
-                                    Vérifiez notre <a href="/pages/blog.html" style="color: var(--accent-blue);">blog</a> pour les dernières mises à jour
-                                </li>
-                            </ul>
-                        </div>
+                            <p class="script-description">Premium executor. Good for new games.</p>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <span class="logo-icon">&#9632;</span>
-                        <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                        <span class="logo-text">WritzHub</span>
                     </a>
-                    <p class="footer-tagline">
-                        Le meilleur hub de scripts Roblox pour executors.
-                    </p>
+                    <p class="footer-tagline">Roblox Executor Scripts</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -583,7 +237,7 @@
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>Jeux</h4>
+                        <h4>Games</h4>
                         <ul>
                             <li><a href="#">Adopt Me</a></li>
                             <li><a href="#">Blade Ball</a></li>
@@ -592,32 +246,22 @@
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>Ressources</h4>
+                        <h4>Links</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="/pages/download.html">Télécharger</a></li>
-                            <li><a href="/pages/blog.html">Blog</a></li>
-                            <li><a href="/pages/contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Social</h4>
-                        <ul>
-                            <li><a href="#">Discord</a></li>
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">YouTube</a></li>
+                            <li><a href="#">Docs</a></li>
+                            <li><a href="#">Download</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Writz Hub. Tous droits réservés.</p>
+                <p>&copy; 2025 WritzHub</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="/js/main.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
