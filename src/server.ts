@@ -3,19 +3,24 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-type ServerEntry = {
-  fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
-};
+type StartRequestResolver = (ctx: { request: Request }) => Promise<Response>;
 
-let serverEntryPromise: Promise<ServerEntry> | undefined;
+let resolverPromise: Promise<StartRequestResolver> | undefined;
 
-async function getServerEntry(): Promise<ServerEntry> {
-  if (!serverEntryPromise) {
-    serverEntryPromise = import("@tanstack/react-start/server").then(
-      (m) => (m.default ?? m) as ServerEntry,
+// Lazy import so a module-init failure inside the app bundle stays catchable
+// and is logged instead of surfacing as an opaque 500.
+async function getResolver(): Promise<StartRequestResolver> {
+  if (!resolverPromise) {
+    resolverPromise = Promise.all([
+      import("@tanstack/react-start/server"),
+      import("./router"),
+    ]).then(([server, router]) =>
+      server.createStartHandler({ createRouter: router.createRouter })(
+        server.defaultStreamHandler,
+      ) as StartRequestResolver,
     );
   }
-  return serverEntryPromise;
+  return resolverPromise;
 }
 
 // h3 swallows in-handler throws into a normal 500 Response with body
@@ -44,18 +49,18 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
-export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
-    try {
-      const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
-    } catch (error) {
-      console.error(error);
-      return new Response(renderErrorPage(), {
-        status: 500,
-        headers: { "content-type": "text/html; charset=utf-8" },
-      });
-    }
-  },
-};
+// TanStack Start expects the server entry default export to be a function
+// called with ({ request }) — not an object with a `fetch` method.
+export default async function serverEntry({ request }: { request: Request }): Promise<Response> {
+  try {
+    const resolver = await getResolver();
+    const response = await resolver({ request });
+    return await normalizeCatastrophicSsrResponse(response);
+  } catch (error) {
+    console.error(error);
+    return new Response(renderErrorPage(), {
+      status: 500,
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
+  }
+}
