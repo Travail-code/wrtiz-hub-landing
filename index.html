@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WritzHub | Roblox Executor</title>
-    <meta name="description" content="WritzHub - Roblox Executor premium avec Fly, Auto Farm, AimBot, ESP et bien plus.">
+    <meta name="description" content="WritzHub - Roblox Executor with Fly, Auto Farm, AimBot, ESP scripts">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,6 @@
     </div>
 
     <main>
-        <!-- HERO -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
@@ -54,86 +53,86 @@
                         <span class="badge-dot"></span>
                         <span>Premium Roblox Scripts</span>
                     </div>
-                    <h1 class="hero-title" data-animation="fade-up" data-delay="0.05">
-                        Writz<span class="text-gradient">Hub</span>
-                    </h1>
+                    <h1 class="hero-title" data-animation="fade-up" data-delay="0.05">WritzHub</h1>
                     <p class="hero-subtitle" data-animation="fade-up" data-delay="0.1">
-                        L’executor moderne pour Fly, Auto Farm, AimBot & ESP.<br>
+                        L'executor moderne pour Fly, Auto Farm, AimBot &amp; ESP.<br>
                         Propre, rapide, et prêt à injecter.
                     </p>
 
-                    <div class="hero-executor" data-animation="fade-up" data-delay="0.15">
-                        <div class="hero-executor__glow"></div>
-                        <div class="hero-executor__window">
-                            <div class="hero-executor__topbar">
-                                <div class="hero-executor__dots">
-                                    <span class="hero-executor__dot red"></span>
-                                    <span class="hero-executor__dot yellow"></span>
-                                    <span class="hero-executor__dot green"></span>
-                                </div>
-                                <div class="hero-executor__tabs">
-                                    <span class="hero-executor__tab active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</span>
-                                    <span class="hero-executor__tab"><i class="fas fa-terminal"></i> Console</span>
-                                </div>
-                                <div class="hero-executor__actions">
-                                    <span class="hero-executor__status"><i class="fas fa-circle"></i> Attached</span>
-                                </div>
-                            </div>
-
-                            <div class="hero-executor__body">
-                                <aside class="hero-executor__sidebar">
-                                    <div class="hero-executor__sidebar-title">Workspace</div>
-                                    <div class="hero-executor__file active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</div>
-                                    <div class="hero-executor__file"><i class="fas fa-bolt"></i> auto-farm.lua</div>
-                                    <div class="hero-executor__file"><i class="fas fa-crosshairs"></i> aimbot.lua</div>
-                                    <div class="hero-executor__file"><i class="fas fa-eye"></i> esp.lua</div>
-                                </aside>
-
-                                <div class="hero-executor__editor">
-                                    <div class="hero-executor__toolbar">
-                                        <div class="hero-executor__toolbar-left">
-                                            <span class="hero-executor__pill">Luau</span>
-                                            <span class="hero-executor__pill muted">Ready</span>
-                                        </div>
-                                        <div class="hero-executor__toolbar-right">
-                                            <button class="executor-action-btn executor-action-btn--primary" onclick="copyToClipboard()" type="button">
-                                                <i class="fas fa-copy"></i>
-                                                <span>Copy</span>
-                                            </button>
-                                            <button class="executor-action-btn" type="button">
-                                                <i class="fas fa-play"></i>
-                                                <span>Execute</span>
-                                            </button>
-                                        </div>
+                    <div class="executor-stage" data-animation="fade-up" data-delay="0.15">
+                        <div class="hero-executor">
+                            <div class="hero-executor__glow"></div>
+                            <div class="hero-executor__window">
+                                <div class="hero-executor__topbar">
+                                    <div class="hero-executor__dots">
+                                        <span class="hero-executor__dot red"></span>
+                                        <span class="hero-executor__dot yellow"></span>
+                                        <span class="hero-executor__dot green"></span>
                                     </div>
-
-                                    <div class="hero-executor__code" id="executor-code-block">
-                                        <div class="hero-executor__line"><span class="line-number">1</span><span class="code-content"><span class="code-keyword">local</span> <span class="code-variable">WritzHub</span> = <span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"</span>))()</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">2</span><span class="code-content"></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">3</span><span class="code-content"><span class="code-comment">-- bootstrap modules</span></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">4</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">Init</span>()</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">5</span><span class="code-content"></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">6</span><span class="code-content"><span class="code-comment">-- movement</span></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">7</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleFly</span>(<span class="code-keyword">true</span>)</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">8</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetWalkSpeed</span>(<span class="code-number">32</span>)</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">9</span><span class="code-content"></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">10</span><span class="code-content"><span class="code-comment">-- farming</span></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">11</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">StartAutoFarm</span>(<span class="code-string">"Diamonds"</span>)</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">12</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetTweenSpeed</span>(<span class="code-number">2.5</span>)</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">13</span><span class="code-content"></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">14</span><span class="code-content"><span class="code-comment">-- combat visuals</span></span></div>
-                                        <div class="hero-executor__line"><span class="line-number">15</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleAimBot</span>(<span class="code-keyword">true</span>)</span></div>
-                                        <div class="hero-executor__line"><span class="line-number">16</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleESP</span>(<span class="code-keyword">true</span>)</span></div>
+                                    <div class="hero-executor__tabs">
+                                        <span class="hero-executor__tab active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</span>
+                                        <span class="hero-executor__tab"><i class="fas fa-terminal"></i> Console</span>
                                     </div>
+                                    <div class="hero-executor__actions">
+                                        <span class="hero-executor__status"><i class="fas fa-circle"></i> Attached</span>
+                                    </div>
+                                </div>
 
-                                    <div class="hero-executor__footer">
-                                        <div class="hero-executor__console">
-                                            <span class="console-label">Console</span>
-                                            <span class="console-text">Script injected successfully. Modules loaded without errors.</span>
+                                <div class="hero-executor__body">
+                                    <aside class="hero-executor__sidebar">
+                                        <div class="hero-executor__sidebar-title">Workspace</div>
+                                        <div class="hero-executor__file active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</div>
+                                        <div class="hero-executor__file"><i class="fas fa-bolt"></i> auto-farm.lua</div>
+                                        <div class="hero-executor__file"><i class="fas fa-crosshairs"></i> aimbot.lua</div>
+                                        <div class="hero-executor__file"><i class="fas fa-eye"></i> esp.lua</div>
+                                    </aside>
+
+                                    <div class="hero-executor__editor">
+                                        <div class="hero-executor__toolbar">
+                                            <div class="hero-executor__toolbar-left">
+                                                <span class="hero-executor__pill">Luau</span>
+                                                <span class="hero-executor__pill muted">Ready</span>
+                                            </div>
+                                            <div class="hero-executor__toolbar-right">
+                                                <button class="executor-action-btn executor-action-btn--primary" onclick="copyToClipboard()" type="button">
+                                                    <i class="fas fa-copy"></i>
+                                                    <span>Copy</span>
+                                                </button>
+                                                <button class="executor-action-btn" type="button">
+                                                    <i class="fas fa-play"></i>
+                                                    <span>Execute</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="copied-notification" id="copied-notification">
-                                            <i class="fas fa-check"></i>
-                                            <span>Copied!</span>
+
+                                        <div class="hero-executor__code" id="executor-code-block">
+                                            <div class="hero-executor__line"><span class="line-number">1</span><span class="code-content"><span class="code-keyword">local</span> <span class="code-variable">WritzHub</span> = <span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"</span>))()</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">2</span><span class="code-content"></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">3</span><span class="code-content"><span class="code-comment">-- bootstrap modules</span></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">4</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">Init</span>()</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">5</span><span class="code-content"></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">6</span><span class="code-content"><span class="code-comment">-- movement</span></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">7</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleFly</span>(<span class="code-keyword">true</span>)</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">8</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetWalkSpeed</span>(<span class="code-number">32</span>)</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">9</span><span class="code-content"></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">10</span><span class="code-content"><span class="code-comment">-- farming</span></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">11</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">StartAutoFarm</span>(<span class="code-string">"Diamonds"</span>)</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">12</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetTweenSpeed</span>(<span class="code-number">2.5</span>)</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">13</span><span class="code-content"></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">14</span><span class="code-content"><span class="code-comment">-- combat visuals</span></span></div>
+                                            <div class="hero-executor__line"><span class="line-number">15</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleAimBot</span>(<span class="code-keyword">true</span>)</span></div>
+                                            <div class="hero-executor__line"><span class="line-number">16</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleESP</span>(<span class="code-keyword">true</span>)</span></div>
+                                        </div>
+
+                                        <div class="hero-executor__footer">
+                                            <div class="hero-executor__console">
+                                                <span class="console-label">Console</span>
+                                                <span class="console-text">Script injected successfully. Modules loaded without errors.</span>
+                                            </div>
+                                            <div class="copied-notification" id="copied-notification">
+                                                <i class="fas fa-check"></i>
+                                                <span>Copied!</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +153,6 @@
             </div>
         </section>
 
-        <!-- MARQUEE -->
         <section class="executors-marquee" id="executors">
             <div class="marquee-container">
                 <div class="marquee">
@@ -166,7 +164,6 @@
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">J</span><span>JJSploit</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">F</span><span>Fluxus</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">O</span><span>Oxygen</span></div></div>
-                    <!-- duplicate for seamless loop -->
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">X</span><span>Xeno</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">S</span><span>Solara</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">D</span><span>Delta</span></div></div>
@@ -179,40 +176,38 @@
             </div>
         </section>
 
-        <!-- FEATURES -->
         <section class="section features" id="features">
             <div class="container">
                 <div class="section-header" data-animation="fade-up">
                     <span class="section-tag">Features</span>
                     <h2 class="section-title">Tout ce dont tu as besoin</h2>
-                    <p class="section-desc">Scripts stables, injection propre, et une interface qui ne fait pas amateur.</p>
+                    <p class="section-desc">Scripts stables, injection propre, interface soignée.</p>
                 </div>
                 <div class="features-grid">
                     <article class="feature-card" data-animation="fade-up" data-delay="0.05">
                         <div class="feature-icon"><i class="fas fa-rocket"></i></div>
                         <h3>Injection rapide</h3>
-                        <p>Charge et exécute en une seule commande. Pas de blabla inutile.</p>
+                        <p>Charge et exécute en une seule commande.</p>
                     </article>
                     <article class="feature-card" data-animation="fade-up" data-delay="0.1">
                         <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
                         <h3>Anti-detection</h3>
-                        <p>Options pensées pour rester discret dans les jeux populaires.</p>
+                        <p>Options pensées pour rester discret.</p>
                     </article>
                     <article class="feature-card" data-animation="fade-up" data-delay="0.15">
                         <div class="feature-icon"><i class="fas fa-sliders"></i></div>
                         <h3>Contrôles précis</h3>
-                        <p>Vitesse, tween, farm targets… tout est réglable.</p>
+                        <p>Vitesse, tween, farm targets réglables.</p>
                     </article>
                     <article class="feature-card" data-animation="fade-up" data-delay="0.2">
                         <div class="feature-icon"><i class="fas fa-code"></i></div>
                         <h3>Modulaire</h3>
-                        <p>Fly, Auto Farm, AimBot, ESP : active seulement ce dont tu as besoin.</p>
+                        <p>Active seulement ce dont tu as besoin.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- SCRIPTS -->
         <section class="section scripts" id="scripts">
             <div class="container">
                 <div class="section-header" data-animation="fade-up">
@@ -226,46 +221,37 @@
                             <div class="script-icon"><i class="fas fa-plane"></i></div>
                             <h3 class="script-title">Fly</h3>
                         </div>
-                        <p class="script-description">Vole librement dans n’importe quel jeu Roblox avec contrôle de vitesse et options anti-détection.</p>
-                        <div class="script-footer">
-                            <span class="script-tag">Movement</span>
-                        </div>
+                        <p class="script-description">Vole librement dans n'importe quel jeu Roblox avec contrôle de vitesse.</p>
+                        <div class="script-footer"><span class="script-tag">Movement</span></div>
                     </article>
                     <article class="script-card" data-animation="fade-up" data-delay="0.08">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-robot"></i></div>
                             <h3 class="script-title">Auto Farm</h3>
                         </div>
-                        <p class="script-description">Collecte automatiquement ressources, coins et objets rares. Configurable par cible.</p>
-                        <div class="script-footer">
-                            <span class="script-tag">Farming</span>
-                        </div>
+                        <p class="script-description">Collecte automatiquement ressources, coins et objets rares.</p>
+                        <div class="script-footer"><span class="script-tag">Farming</span></div>
                     </article>
                     <article class="script-card" data-animation="fade-up" data-delay="0.16">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-crosshairs"></i></div>
                             <h3 class="script-title">AimBot</h3>
                         </div>
-                        <p class="script-description">Visée automatique précise sur les ennemis. Smooth aim et FOV réglables.</p>
-                        <div class="script-footer">
-                            <span class="script-tag">Combat</span>
-                        </div>
+                        <p class="script-description">Visée automatique précise. Smooth aim et FOV réglables.</p>
+                        <div class="script-footer"><span class="script-tag">Combat</span></div>
                     </article>
                     <article class="script-card" data-animation="fade-up" data-delay="0.24">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-eye"></i></div>
                             <h3 class="script-title">ESP</h3>
                         </div>
-                        <p class="script-description">Vois à travers les murs. Joueurs, objets et distances en temps réel.</p>
-                        <div class="script-footer">
-                            <span class="script-tag">Visuals</span>
-                        </div>
+                        <p class="script-description">Vois à travers les murs. Joueurs et objets en temps réel.</p>
+                        <div class="script-footer"><span class="script-tag">Visuals</span></div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
         <section class="section cta-section">
             <div class="container">
                 <div class="cta-box" data-animation="fade-up">
@@ -312,11 +298,8 @@
                     notification.classList.add('show');
                     setTimeout(() => notification.classList.remove('show'), 2200);
                 }
-                // Also toast if we have a global toast
                 if (window.showToast) window.showToast('Loadstring copied!');
-            }).catch(() => {
-                alert('Copy failed – select the code manually.');
-            });
+            }).catch(() => alert('Copy failed – select the code manually.'));
         }
     </script>
 </body>
