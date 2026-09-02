@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Writz Hub</title>
+    <meta name="description" content="Blog Writz Hub - Actualités, tutoriels et mises à jour sur le script d'automatisation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">&#9632;</span>
+                <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+            </a>
+            <nav class="nav">
+                <a href="/" class="nav-link">Accueil</a>
+                <a href="/#features" class="nav-link">Fonctionnalités</a>
+                <a href="/pages/documentation.html" class="nav-link">Documentation</a>
+                <a href="/pages/download.html" class="nav-link">Télécharger</a>
+                <a href="/pages/blog.html" class="nav-link active">Blog</a>
+                <a href="/pages/contact.html" class="nav-link">Contact</a>
+                <a href="/pages/faq.html" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="/" class="mobile-nav-link">Accueil</a>
+        <a href="/#features" class="mobile-nav-link">Fonctionnalités</a>
+        <a href="/pages/documentation.html" class="mobile-nav-link">Documentation</a>
+        <a href="/pages/download.html" class="mobile-nav-link">Télécharger</a>
+        <a href="/pages/blog.html" class="mobile-nav-link active">Blog</a>
+        <a href="/pages/contact.html" class="mobile-nav-link">Contact</a>
+        <a href="/pages/faq.html" class="mobile-nav-link">FAQ</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Blog</span>
+                    <h1 class="section-title" style="font-size: var(--font-size-6xl);">
+                        <span class="word">Dernières</span>
+                        <span class="word highlight">actualités</span>
+                    </h1>
+                    <p class="section-subtitle">
+                        Restez informé des dernières mises à jour, tutoriels et annonces de Writz Hub.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Categories -->
+        <section class="section">
+            <div class="container">
+                <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterBlog('all')" id="blog-filter-all">Toutes</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterBlog('news')" id="blog-filter-news">Actualités</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterBlog('tutorials')" id="blog-filter-tutorials">Tutoriels</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterBlog('updates')" id="blog-filter-updates">Mises à jour</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterBlog('tips')" id="blog-filter-tips">Astuces</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="section">
+            <div class="container">
+                <div class="featured-article glass-card" data-animation="fade-up">
+                    <div class="featured-article-content">
+                        <span class="section-tag">À la une</span>
+                        <h2 class="featured-article-title">
+                            Lancement de Writz Hub v2.0 - La plus grande mise à jour de l'histoire
+                        </h2>
+                        <p class="featured-article-excerpt">
+                            Découvrez les nouvelles fonctionnalités révolutionnaires de la version 2.0, 
+                            incluant une interface repensée, des performances améliorées et bien plus encore.
+                        </p>
+                        <div style="display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-lg);">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>15 Janvier 2025</span>
+                                </div>
+                                <div class="blog-category">Actualités</div>
+                            </div>
+                            <a href="#" class="blog-read-more">
+                                Lire l'article
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-article-image">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 4rem; color: rgba(255, 255, 255, 0.3);">v2.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog section">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Article 1 -->
+                    <article class="blog-card glass-card" data-category="news" data-animation="fade-up">
+                        <div class="blog-image">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>10 Janvier 2025</span>
+                                </div>
+                                <div class="blog-category">Actualités</div>
+                            </div>
+                            <h3 class="blog-title-card">Nouveaux executors supportés : Solara et Delta</h3>
+                            <p class="blog-excerpt">
+                                Nous sommes ravis d'annoncer le support officiel pour Solara et Delta, deux des executors les plus populaires. Découvrez comment les utiliser avec Writz Hub.
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card glass-card" data-category="tutorials" data-animation="fade-up" data-delay="0.1">
+                        <div class="blog-image">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>5 Janvier 2025</span>
+                                </div>
+                                <div class="blog-category">Tutoriels</div>
+                            </div>
+                            <h3 class="blog-title-card">Guide complet : Automatiser vos tâches avec Writz Hub</h3>
+                            <p class="blog-excerpt">
+                                Apprenez à configurer Writz Hub pour automatiser vos tâches quotidiennes en quelques clics. Ce guide pas à pas couvre tout ce que vous devez savoir.
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="blog-card glass-card" data-category="updates" data-animation="fade-up" data-delay="0.2">
+                        <div class="blog-image">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>28 Décembre 2024</span>
+                                </div>
+                                <div class="blog-category">Mises à jour</div>
+                            </div>
+                            <h3 class="blog-title-card">Mise à jour de sécurité : Corrections et améliorations</h3>
+                            <p class="blog-excerpt">
+                                Nous avons publié une mise à jour de sécurité importante avec des corrections de bugs et des améliorations de performance. Mettez à jour dès maintenant.
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="blog-card glass-card" data-category="tips" data-animation="fade-up" data-delay="0.3">
+                        <div class="blog-image">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>20 Décembre 2024</span>
+                                </div>
+                                <div class="blog-category">Astuces</div>
+                            </div>
+                            <h3 class="blog-title-card">10 astuces pour optimiser vos scripts Writz Hub</h3>
+                            <p class="blog-excerpt">
+                                Découvrez 10 astuces et bonnes pratiques pour tirer le meilleur parti de Writz Hub et optimiser vos scripts comme un pro.
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="blog-card glass-card" data-category="news" data-animation="fade-up" data-delay="0.4">
+                        <div class="blog-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>15 Décembre 2024</span>
+                                </div>
+                                <div class="blog-category">Actualités</div>
+                            </div>
+                            <h3 class="blog-title-card">Writz Hub atteint 50 000 utilisateurs !</h3>
+                            <p class="blog-excerpt">
+                                Nous sommes incroyablement fiers d'annoncer que Writz Hub a atteint la barre des 50 000 utilisateurs actifs. Merci à tous pour votre soutien !
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="blog-card glass-card" data-category="tutorials" data-animation="fade-up" data-delay="0.5">
+                        <div class="blog-image">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>10 Décembre 2024</span>
+                                </div>
+                                <div class="blog-category">Tutoriels</div>
+                            </div>
+                            <h3 class="blog-title-card">Sécurité avec Writz Hub : Bonnes pratiques</h3>
+                            <p class="blog-excerpt">
+                                Apprenez à sécuriser vos scripts et protéger vos données avec Writz Hub. Ce guide couvre les meilleures pratiques de sécurité.
+                            </p>
+                            <a href="#" class="blog-read-more">
+                                Lire la suite
+                                <span>&#8594;</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <button class="btn btn-secondary" onclick="loadMoreArticles()" id="load-more-btn">
+                        <span class="btn-content">
+                            <span>Charger plus d'articles</span>
+                            <span class="btn-icon" style="margin-left: var(--space-sm);">&#8595;</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section" style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+            <div class="container">
+                <div class="newsletter-card glass-card" data-animation="fade-up">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
+                        <div>
+                            <h3 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: var(--space-md);">
+                                Restez informé
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                                Abonnez-vous à notre newsletter pour recevoir les dernières actualités, 
+                                tutoriels et mises à jour de Writz Hub directement dans votre boîte mail.
+                            </p>
+                            <form id="newsletter-form" style="display: flex; gap: var(--space-sm);">
+                                <input type="email" placeholder="votre@email.com" required 
+                                       style="flex: 1; padding: var(--space-md) var(--space-lg); background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); font-size: var(--font-size-base); color: var(--text-primary);">
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="btn-content">
+                                        <span class="btn-text">S'abonner</span>
+                                        <span class="btn-icon" style="margin-left: var(--space-xs);"><i class="fas fa-paper-plane"></i></span>
+                                    </span>
+                                </button>
+                            </form>
+                            <div id="newsletter-success" style="margin-top: var(--space-md); padding: var(--space-md); background: rgba(39, 202, 63, 0.1); border: 1px solid var(--accent-green); border-radius: var(--radius-md); color: var(--accent-green); font-size: var(--font-size-sm); display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <span style="margin-left: var(--space-sm);">Merci pour votre abonnement !</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                            <div style="width: 200px; height: 200px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-envelope-open-text" style="font-size: 4rem; color: rgba(255, 255, 255, 0.3);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">&#9632;</span>
+                        <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Le script ultime pour l'automatisation et l'optimisation de vos tâches.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="/pages/download.html">Télécharger</a></li>
+                            <li><a href="#">Changelog</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="/pages/faq.html">FAQ</a></li>
+                            <li><a href="/pages/contact.html">Support</a></li>
+                            <li><a href="#">Communauté</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Légale</h4>
+                        <ul>
+                            <li><a href="#">Conditions Générales</a></li>
+                            <li><a href="#">Politique de Confidentialité</a></li>
+                            <li><a href="#">Mentions Légales</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Writz Hub. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Blog Filter Functionality
+        function filterBlog(category) {
+            const allArticles = document.querySelectorAll('.blog-card, .featured-article');
+            
+            allArticles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+            
+            // Update active button
+            document.querySelectorAll('button[onclick^="filterBlog"]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Load More Articles Functionality
+        function loadMoreArticles() {
+            const btn = document.getElementById('load-more-btn');
+            btn.innerHTML = '<span class="btn-content"><span class="spinner"></span><span class="btn-text">Chargement...</span></span>';
+            btn.disabled = true;
+            
+            // Simulate loading (in a real app, this would be an API call)
+            setTimeout(() => {
+                // Add more articles here or fetch from API
+                btn.innerHTML = '<span class="btn-content"><span>Charger plus d\'articles</span><span class="btn-icon" style="margin-left: var(--space-sm);">&#8595;</span></span>';
+                btn.disabled = false;
+            }, 1500);
+        }
+        
+        // Newsletter Form Handler
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Validate email
+            if (!email || !email.includes('@')) {
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="btn-content"><span class="spinner"></span><span class="btn-text">Envoi...</span></span>';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Hide loading state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                document.getElementById('newsletter-success').style.display = 'flex';
+                
+                // Reset form
+                this.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('newsletter-success').style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+        
+        // Set first button as active by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstBtn = document.querySelector('button[onclick^="filterBlog"]');
+            if (firstBtn) {
+                firstBtn.classList.add('active');
+            }
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Writz Hub</title>
+    <meta name="description" content="Questions fréquentes sur Writz Hub - Trouvez des réponses à vos questions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">&#9632;</span>
+                <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+            </a>
+            <nav class="nav">
+                <a href="/" class="nav-link">Accueil</a>
+                <a href="/#features" class="nav-link">Fonctionnalités</a>
+                <a href="/pages/documentation.html" class="nav-link">Documentation</a>
+                <a href="/pages/download.html" class="nav-link">Télécharger</a>
+                <a href="/pages/blog.html" class="nav-link">Blog</a>
+                <a href="/pages/contact.html" class="nav-link">Contact</a>
+                <a href="/pages/faq.html" class="nav-link active">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="/" class="mobile-nav-link">Accueil</a>
+        <a href="/#features" class="mobile-nav-link">Fonctionnalités</a>
+        <a href="/pages/documentation.html" class="mobile-nav-link">Documentation</a>
+        <a href="/pages/download.html" class="mobile-nav-link">Télécharger</a>
+        <a href="/pages/blog.html" class="mobile-nav-link">Blog</a>
+        <a href="/pages/contact.html" class="mobile-nav-link">Contact</a>
+        <a href="/pages/faq.html" class="mobile-nav-link active">FAQ</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h1 class="section-title" style="font-size: var(--font-size-6xl);">
+                        <span class="word">Questions</span>
+                        <span class="word highlight">fréquentes</span>
+                    </h1>
+                    <p class="section-subtitle">
+                        Trouvez des réponses aux questions les plus courantes sur Writz Hub.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto;" data-animation="fade-up">
+                    <div style="position: relative;">
+                        <input type="text" id="faq-search" placeholder="Rechercher une question..." 
+                               style="width: 100%; padding: var(--space-md) var(--space-xl); background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: var(--radius-xl); font-size: var(--font-size-base); color: var(--text-primary); backdrop-filter: blur(20px);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                             style="position: absolute; right: var(--space-lg); top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-secondary);">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Categories -->
+        <section class="section">
+            <div class="container">
+                <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('all')">Toutes</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('getting-started')">Débuter</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('installation')">Installation</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('features')">Fonctionnalités</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('troubleshooting')">Dépannage</button>
+                    <button class="btn btn-secondary" style="border-radius: var(--radius-full); padding: var(--space-sm) var(--space-lg);" onclick="filterFAQ('security')">Sécurité</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ List -->
+        <section class="section">
+            <div class="container">
+                <div class="faq-grid">
+                    <!-- Getting Started -->
+                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up">
+                        <button class="faq-question">
+                            Qu'est-ce que Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Writz Hub est un script puissant conçu pour automatiser et optimiser vos tâches. Il prend en charge plusieurs executors populaires et offre une interface intuitive pour gérer vos automatisations.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up" data-delay="0.1">
+                        <button class="faq-question">
+                            Pourquoi utiliser Writz Hub plutôt qu'un autre script ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Writz Hub se distingue par son interface moderne, ses performances optimisées, sa compatibilité multi-executors et son système de plugins modulaire. Nous offrons également un support réactif et une documentation complète.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="getting-started" data-animation="fade-up" data-delay="0.2">
+                        <button class="faq-question">
+                            Writz Hub est-il gratuit ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui, Writz Hub est gratuit pour un usage personnel. Nous proposons également des plans premium pour les entreprises avec des fonctionnalités avancées comme le support prioritaire, l'accès aux versions bêta et bien plus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Installation -->
+                    <div class="faq-item glass-card" data-category="installation" data-animation="fade-up" data-delay="0.3">
+                        <button class="faq-question">
+                            Comment installer Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Vous pouvez installer Writz Hub de plusieurs manières :</p>
+                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Télécharger le script depuis notre <a href="/pages/download.html" style="color: var(--accent-blue);">page de téléchargement</a></li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Installer via npm: <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">npm install writz-hub</code></li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Cloner le dépôt GitHub: <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">git clone https://github.com/Travail-code/wrtiz-hub-landing.git</code></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="installation" data-animation="fade-up" data-delay="0.4">
+                        <button class="faq-question">
+                            Quels sont les prérequis pour utiliser Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Writz Hub nécessite :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Un executor compatible (Xeno, Solara, Delta, etc.)</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Node.js v14 ou supérieur (pour l'installation via npm)</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">2 Go de RAM minimum (4 Go recommandé)</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">50 Mo d'espace disque libre</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="installation" data-animation="fade-up" data-delay="0.5">
+                        <button class="faq-question">
+                            Puis-je utiliser Writz Hub sur mobile ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Actuellement, Writz Hub est principalement conçu pour les systèmes desktop (Windows, macOS, Linux). Une version mobile est en développement et sera disponible prochainement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="faq-item glass-card" data-category="features" data-animation="fade-up" data-delay="0.6">
+                        <button class="faq-question">
+                            Quels executors sont supportés par Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Writz Hub est compatible avec les executors suivants :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Xeno</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Solara</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Delta</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Eclipse</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Krnl</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">JJSploit</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Fluxus</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Oxygen</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md); color: var(--text-secondary);">Nous travaillons constamment pour ajouter la compatibilité avec d'autres executors.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="features" data-animation="fade-up" data-delay="0.7">
+                        <button class="faq-question">
+                            Puis-je créer mes propres scripts avec Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui ! Writz Hub offre une API complète qui vous permet de créer vos propres scripts personnalisés. Consultez notre <a href="/pages/documentation.html" style="color: var(--accent-blue);">documentation</a> pour en savoir plus sur la création de scripts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="features" data-animation="fade-up" data-delay="0.8">
+                        <button class="faq-question">
+                            Writz Hub prend-il en charge le multi-comptes ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui, Writz Hub est conçu pour gérer plusieurs comptes simultanément. Vous pouvez configurer différents profils et basculer entre eux facilement. Cette fonctionnalité est particulièrement utile pour les utilisateurs qui gèrent plusieurs projets ou clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="features" data-animation="fade-up" data-delay="0.9">
+                        <button class="faq-question">
+                            Puis-je planifier des tâches avec Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui, Writz Hub inclut un système de planification avancé qui vous permet de programmer des tâches à des moments spécifiques ou à intervalles réguliers. Vous pouvez configurer des tâches récurrentes quotidiennes, hebdomadaires ou mensuelles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="faq-item glass-card" data-category="troubleshooting" data-animation="fade-up" data-delay="1.0">
+                        <button class="faq-question">
+                            Le script ne s'installe pas, que faire ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Si vous rencontrez des problèmes d'installation :</p>
+                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Vérifiez que Node.js est installé et à jour</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Assurez-vous que vous avez les permissions nécessaires</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Essayez de désactiver temporairement votre antivirus</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Consultez les logs pour identifier le problème</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Contactez notre <a href="/pages/contact.html" style="color: var(--accent-blue);">support technique</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="troubleshooting" data-animation="fade-up" data-delay="1.1">
+                        <button class="faq-question">
+                            Writz Hub ne détecte pas mon executor, que faire ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Si Writz Hub ne détecte pas votre executor :</p>
+                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Vérifiez que votre executor est dans la liste des <a href="#" onclick="filterFAQ('installation')" style="color: var(--accent-blue); cursor: pointer;">executors supportés</a></li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Assurez-vous que votre executor est à jour</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Vérifiez que le chemin de votre executor est correct dans la configuration</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Redémarrez Writz Hub</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Si le problème persiste, contactez notre support</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="troubleshooting" data-animation="fade-up" data-delay="1.2">
+                        <button class="faq-question">
+                            Mon script plante, comment faire un rapport de bug ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pour nous aider à résoudre votre problème, veuillez inclure les informations suivantes dans votre rapport de bug :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Version de Writz Hub</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Executor utilisé</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Système d'exploitation</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Description détaillée du problème</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Étapes pour reproduire le bug</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Logs d'erreur (si disponibles)</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md);">Vous pouvez ouvrir un rapport de bug sur notre <a href="#" style="color: var(--accent-blue);">GitHub</a> ou via notre <a href="/pages/contact.html" style="color: var(--accent-blue);">formulaire de contact</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="troubleshooting" data-animation="fade-up" data-delay="1.3">
+                        <button class="faq-question">
+                            Comment mettre à jour Writz Hub ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pour mettre à jour Writz Hub :</p>
+                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Si vous avez installé via npm : <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">npm update writz-hub</code></li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Si vous avez téléchargé le script manuellement : téléchargez la dernière version depuis notre <a href="/pages/download.html" style="color: var(--accent-blue);">page de téléchargement</a> et remplacez les anciens fichiers</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Vérifiez la version installée avec la commande <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">writz-hub --version</code></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="faq-item glass-card" data-category="security" data-animation="fade-up" data-delay="1.4">
+                        <button class="faq-question">
+                            Writz Hub est-il sécurisé ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui, la sécurité est notre priorité absolue. Writz Hub utilise :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Chiffrement AES-256 pour toutes les communications</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Vérification des signatures numériques</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Protection contre les injections de code</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Audit de sécurité régulier</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md); color: var(--text-secondary);">Nous ne stockons jamais vos données personnelles ou vos informations sensibles.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="security" data-animation="fade-up" data-delay="1.5">
+                        <button class="faq-question">
+                            Mes données sont-elles protégées ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolument. Toutes vos données sont :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Chiffrées en transit et au repos</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Stockées localement sur votre machine (pas dans le cloud)</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">Accessibles uniquement par vous</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md); color: var(--text-secondary);">Nous respectons votre vie privée et ne partageons jamais vos données avec des tiers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card" data-category="security" data-animation="fade-up" data-delay="1.6">
+                        <button class="faq-question">
+                            Puis-je utiliser Writz Hub en production ?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oui, Writz Hub est conçu pour un usage en production. Des milliers d'utilisateurs l'utilisent déjà dans des environnements de production. Nous recommandons cependant :</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">De tester d'abord dans un environnement de développement</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">De configurer des sauvegardes régulières</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">De surveiller les performances</li>
+                                <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">De mettre à jour régulièrement Writz Hub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <p style="color: var(--text-secondary);">Vous n'avez pas trouvé la réponse à votre question ?</p>
+                    <a href="/pages/contact.html" class="btn btn-primary" style="margin-top: var(--space-lg);">
+                        <span class="btn-content">
+                            <span class="btn-text">Contactez-nous</span>
+                            <span class="btn-icon" style="margin-left: var(--space-sm);">&#8594;</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">&#9632;</span>
+                        <span class="logo-text">Writz<span class="highlight">Hub</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Le script ultime pour l'automatisation et l'optimisation de vos tâches.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="/pages/download.html">Télécharger</a></li>
+                            <li><a href="#">Changelog</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="/pages/blog.html">Blog</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="/pages/contact.html">Support</a></li>
+                            <li><a href="#">Communauté</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Légale</h4>
+                        <ul>
+                            <li><a href="#">Conditions Générales</a></li>
+                            <li><a href="#">Politique de Confidentialité</a></li>
+                            <li><a href="#">Mentions Légales</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Writz Hub. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script>
+        // FAQ Filter Functionality
+        function filterFAQ(category) {
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update active button
+            document.querySelectorAll('button[onclick^="filterFAQ"]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // FAQ Search Functionality
+        document.getElementById('faq-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // Set first button as active by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstBtn = document.querySelector('button[onclick^="filterFAQ"]');
+            if (firstBtn) {
+                firstBtn.classList.add('active');
+            }
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
