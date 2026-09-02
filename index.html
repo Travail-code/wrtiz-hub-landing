@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WritzHub | Roblox Executor</title>
-    <meta name="description" content="WritzHub - Roblox Executor with Fly, Auto Farm, AimBot, ESP scripts">
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta name="description" content="WritzHub - Roblox Executor premium avec Fly, Auto Farm, AimBot, ESP et bien plus.">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="header">
+    <div class="bg-grid"></div>
+    <div class="particles" id="particles"></div>
+
+    <header class="header" id="header">
         <div class="container">
             <a href="/" class="logo">
-                <span class="logo-icon">&#9632;</span>
+                <span class="logo-icon"><i class="fas fa-bolt"></i></span>
                 <span class="logo-text">WritzHub</span>
             </a>
             <nav class="nav">
                 <a href="#executors" class="nav-link">Executors</a>
+                <a href="#features" class="nav-link">Features</a>
                 <a href="#scripts" class="nav-link">Scripts</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <a href="#scripts" class="btn btn-sm btn-primary header-cta">
+                <span>Get Scripts</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -30,19 +38,31 @@
         </div>
     </header>
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu">
         <a href="#executors" class="mobile-nav-link">Executors</a>
+        <a href="#features" class="mobile-nav-link">Features</a>
         <a href="#scripts" class="mobile-nav-link">Scripts</a>
+        <a href="#scripts" class="btn btn-primary" style="margin-top: 12px;">Get Scripts</a>
     </div>
 
     <main>
-        <section class="hero" id="home" style="padding-top: 100px;">
+        <!-- HERO -->
+        <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">WritzHub</h1>
-                    <p class="hero-subtitle">Roblox Executor</p>
+                    <div class="hero-badge" data-animation="fade-up">
+                        <span class="badge-dot"></span>
+                        <span>Premium Roblox Scripts</span>
+                    </div>
+                    <h1 class="hero-title" data-animation="fade-up" data-delay="0.05">
+                        Writz<span class="text-gradient">Hub</span>
+                    </h1>
+                    <p class="hero-subtitle" data-animation="fade-up" data-delay="0.1">
+                        L’executor moderne pour Fly, Auto Farm, AimBot & ESP.<br>
+                        Propre, rapide, et prêt à injecter.
+                    </p>
 
-                    <div class="hero-executor" data-animation="fade-up">
+                    <div class="hero-executor" data-animation="fade-up" data-delay="0.15">
                         <div class="hero-executor__glow"></div>
                         <div class="hero-executor__window">
                             <div class="hero-executor__topbar">
@@ -76,11 +96,11 @@
                                             <span class="hero-executor__pill muted">Ready</span>
                                         </div>
                                         <div class="hero-executor__toolbar-right">
-                                            <button class="executor-action-btn executor-action-btn--primary" onclick="copyToClipboard()">
+                                            <button class="executor-action-btn executor-action-btn--primary" onclick="copyToClipboard()" type="button">
                                                 <i class="fas fa-copy"></i>
                                                 <span>Copy</span>
                                             </button>
-                                            <button class="executor-action-btn">
+                                            <button class="executor-action-btn" type="button">
                                                 <i class="fas fa-play"></i>
                                                 <span>Execute</span>
                                             </button>
@@ -113,7 +133,7 @@
                                         </div>
                                         <div class="copied-notification" id="copied-notification">
                                             <i class="fas fa-check"></i>
-                                            <span>Copied to clipboard!</span>
+                                            <span>Copied!</span>
                                         </div>
                                     </div>
                                 </div>
@@ -121,20 +141,20 @@
                         </div>
                     </div>
 
-                    <p class="hero-helper-text">A cleaner, more realistic executor preview with script editor, workspace, status, and quick actions.</p>
-
-                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-                        <a href="#executors" class="btn">
-                            <span class="btn-text">View Executors</span>
+                    <div class="hero-cta" data-animation="fade-up" data-delay="0.25">
+                        <a href="#executors" class="btn btn-primary btn-lg">
+                            <span>View Executors</span>
+                            <i class="fas fa-chevron-down"></i>
                         </a>
-                        <a href="#scripts" class="btn">
-                            <span class="btn-text">View Scripts</span>
+                        <a href="#scripts" class="btn btn-ghost btn-lg">
+                            <span>Browse Scripts</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- MARQUEE -->
         <section class="executors-marquee" id="executors">
             <div class="marquee-container">
                 <div class="marquee">
@@ -146,49 +166,115 @@
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">J</span><span>JJSploit</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">F</span><span>Fluxus</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">O</span><span>Oxygen</span></div></div>
+                    <!-- duplicate for seamless loop -->
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">X</span><span>Xeno</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">S</span><span>Solara</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">D</span><span>Delta</span></div></div>
                     <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">E</span><span>Eclipse</span></div></div>
+                    <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">K</span><span>Krnl</span></div></div>
+                    <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">J</span><span>JJSploit</span></div></div>
+                    <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">F</span><span>Fluxus</span></div></div>
+                    <div class="marquee-item"><div class="executor-logo"><span class="executor-icon">O</span><span>Oxygen</span></div></div>
                 </div>
             </div>
         </section>
 
-        <section class="scripts section" id="scripts" style="padding: 80px 0;">
+        <!-- FEATURES -->
+        <section class="section features" id="features">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-animation="fade-up">
+                    <span class="section-tag">Features</span>
+                    <h2 class="section-title">Tout ce dont tu as besoin</h2>
+                    <p class="section-desc">Scripts stables, injection propre, et une interface qui ne fait pas amateur.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card" data-animation="fade-up" data-delay="0.05">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Injection rapide</h3>
+                        <p>Charge et exécute en une seule commande. Pas de blabla inutile.</p>
+                    </article>
+                    <article class="feature-card" data-animation="fade-up" data-delay="0.1">
+                        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Anti-detection</h3>
+                        <p>Options pensées pour rester discret dans les jeux populaires.</p>
+                    </article>
+                    <article class="feature-card" data-animation="fade-up" data-delay="0.15">
+                        <div class="feature-icon"><i class="fas fa-sliders"></i></div>
+                        <h3>Contrôles précis</h3>
+                        <p>Vitesse, tween, farm targets… tout est réglable.</p>
+                    </article>
+                    <article class="feature-card" data-animation="fade-up" data-delay="0.2">
+                        <div class="feature-icon"><i class="fas fa-code"></i></div>
+                        <h3>Modulaire</h3>
+                        <p>Fly, Auto Farm, AimBot, ESP : active seulement ce dont tu as besoin.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCRIPTS -->
+        <section class="section scripts" id="scripts">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
                     <span class="section-tag">Scripts</span>
                     <h2 class="section-title">Available Scripts</h2>
+                    <p class="section-desc">Les modules principaux de WritzHub.</p>
                 </div>
                 <div class="scripts-grid">
-                    <article class="script-card" data-animation="fade-up">
+                    <article class="script-card" data-animation="fade-up" data-delay="0">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-plane"></i></div>
                             <h3 class="script-title">Fly</h3>
                         </div>
-                        <p class="script-description">Fly freely in any Roblox game with speed control and anti-detection.</p>
+                        <p class="script-description">Vole librement dans n’importe quel jeu Roblox avec contrôle de vitesse et options anti-détection.</p>
+                        <div class="script-footer">
+                            <span class="script-tag">Movement</span>
+                        </div>
                     </article>
-                    <article class="script-card" data-animation="fade-up" data-delay="0.1">
+                    <article class="script-card" data-animation="fade-up" data-delay="0.08">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-robot"></i></div>
                             <h3 class="script-title">Auto Farm</h3>
                         </div>
-                        <p class="script-description">Automatically collect resources, coins, and rare items.</p>
+                        <p class="script-description">Collecte automatiquement ressources, coins et objets rares. Configurable par cible.</p>
+                        <div class="script-footer">
+                            <span class="script-tag">Farming</span>
+                        </div>
                     </article>
-                    <article class="script-card" data-animation="fade-up" data-delay="0.2">
+                    <article class="script-card" data-animation="fade-up" data-delay="0.16">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-crosshairs"></i></div>
                             <h3 class="script-title">AimBot</h3>
                         </div>
-                        <p class="script-description">Auto-aim at enemies with perfect accuracy.</p>
+                        <p class="script-description">Visée automatique précise sur les ennemis. Smooth aim et FOV réglables.</p>
+                        <div class="script-footer">
+                            <span class="script-tag">Combat</span>
+                        </div>
                     </article>
-                    <article class="script-card" data-animation="fade-up" data-delay="0.3">
+                    <article class="script-card" data-animation="fade-up" data-delay="0.24">
                         <div class="script-header">
                             <div class="script-icon"><i class="fas fa-eye"></i></div>
                             <h3 class="script-title">ESP</h3>
                         </div>
-                        <p class="script-description">See through walls. Display players and objects in real-time.</p>
+                        <p class="script-description">Vois à travers les murs. Joueurs, objets et distances en temps réel.</p>
+                        <div class="script-footer">
+                            <span class="script-tag">Visuals</span>
+                        </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-box" data-animation="fade-up">
+                    <h2>Prêt à injecter ?</h2>
+                    <p>Copie le loadstring et lance WritzHub dans ton executor favori.</p>
+                    <button class="btn btn-primary btn-lg" onclick="copyToClipboard()" type="button">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy Loadstring</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -199,29 +285,37 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
-                        <span class="logo-icon">&#9632;</span>
+                        <span class="logo-icon"><i class="fas fa-bolt"></i></span>
                         <span class="logo-text">WritzHub</span>
                     </a>
                     <p class="footer-tagline">Roblox Executor Scripts</p>
                 </div>
+                <div class="footer-links">
+                    <a href="#executors">Executors</a>
+                    <a href="#features">Features</a>
+                    <a href="#scripts">Scripts</a>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 WritzHub</p>
+                <p>&copy; 2025–2026 WritzHub. Not affiliated with Roblox Corporation.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
         function copyToClipboard() {
             const code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"))()';
             navigator.clipboard.writeText(code).then(() => {
                 const notification = document.getElementById('copied-notification');
-                notification.style.display = 'inline-flex';
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 2500);
+                if (notification) {
+                    notification.classList.add('show');
+                    setTimeout(() => notification.classList.remove('show'), 2200);
+                }
+                // Also toast if we have a global toast
+                if (window.showToast) window.showToast('Loadstring copied!');
+            }).catch(() => {
+                alert('Copy failed – select the code manually.');
             });
         }
     </script>
