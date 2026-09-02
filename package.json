@@ -1,0 +1,11 @@
+{
+  "name": "wrtiz-hub-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "vercel": {
+    "version": 2,
+    "builds": [],
+    "outputDirectory": "."
+  }
+}
