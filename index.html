@@ -10,80 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .executor-container {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            overflow-x: auto;
-        }
-        .executor-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background: #1a1a1a;
-            border-bottom: 1px solid #333;
-            margin: -20px -20px 20px -20px;
-        }
-        .executor-dots {
-            display: flex;
-            gap: 6px;
-        }
-        .executor-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .executor-dot.red { background: #ff5f56; }
-        .executor-dot.yellow { background: #ffbd2e; }
-        .executor-dot.green { background: #27ca3f; }
-        .executor-title {
-            margin-left: auto;
-            color: #888;
-            font-size: 12px;
-        }
-        .code-line {
-            color: #fff;
-            line-height: 1.6;
-        }
-        .code-comment { color: #6a737d; }
-        .code-keyword { color: #ff7b72; }
-        .code-string { color: #a5d6ff; }
-        .code-function { color: #79c0ff; }
-        .code-number { color: #ffa657; }
-        .copy-btn {
-            background: #222;
-            border: 1px solid #444;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-        }
-        .copy-btn:hover {
-            background: #333;
-        }
-        .copied-notification {
-            background: #27ca3f;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-top: 10px;
-            display: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -115,43 +41,88 @@
                 <div class="hero-content">
                     <h1 class="hero-title">WritzHub</h1>
                     <p class="hero-subtitle">Roblox Executor</p>
-                    
-                    <div class="executor-container" style="margin: 40px 0;">
-                        <div class="executor-header">
-                            <div class="executor-dots">
-                                <span class="executor-dot red"></span>
-                                <span class="executor-dot yellow"></span>
-                                <span class="executor-dot green"></span>
+
+                    <div class="hero-executor" data-animation="fade-up">
+                        <div class="hero-executor__glow"></div>
+                        <div class="hero-executor__window">
+                            <div class="hero-executor__topbar">
+                                <div class="hero-executor__dots">
+                                    <span class="hero-executor__dot red"></span>
+                                    <span class="hero-executor__dot yellow"></span>
+                                    <span class="hero-executor__dot green"></span>
+                                </div>
+                                <div class="hero-executor__tabs">
+                                    <span class="hero-executor__tab active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</span>
+                                    <span class="hero-executor__tab"><i class="fas fa-terminal"></i> Console</span>
+                                </div>
+                                <div class="hero-executor__actions">
+                                    <span class="hero-executor__status"><i class="fas fa-circle"></i> Attached</span>
+                                </div>
                             </div>
-                            <span class="executor-title">writz-hub.lua</span>
-                        </div>
-                        <div style="padding: 15px;">
-                            <span class="code-line"><span class="code-keyword">local</span> <span class="code-function">WritzHub</span> = <span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"</span>))()</span>
-                            <span class="code-line"></span>
-                            <span class="code-line"><span class="code-comment">-- Fly Script</span></span>
-                            <span class="code-line"><span class="code-function">WritzHub:ToggleFly</span>(<span class="code-keyword">true</span>)</span>
-                            <span class="code-line"></span>
-                            <span class="code-line"><span class="code-comment">-- Auto Farm</span></span>
-                            <span class="code-line"><span class="code-function">WritzHub:StartAutoFarm</span>(<span class="code-string">"Diamonds"</span>)</span>
-                            <span class="code-line"></span>
-                            <span class="code-line"><span class="code-comment">-- AimBot</span></span>
-                            <span class="code-line"><span class="code-function">WritzHub:ToggleAimBot</span>(<span class="code-keyword">true</span>)</span>
-                            <span class="code-line"></span>
-                            <span class="code-line"><span class="code-comment">-- ESP</span></span>
-                            <span class="code-line"><span class="code-function">WritzHub:ToggleESP</span>(<span class="code-keyword">true</span>)</span>
-                        </div>
-                        <button class="copy-btn" onclick="copyToClipboard()">
-                            <i class="fas fa-copy"></i>
-                            <span>Copy loadstring</span>
-                        </button>
-                        <div class="copied-notification" id="copied-notification">
-                            <i class="fas fa-check"></i>
-                            <span>Copied to clipboard!</span>
+
+                            <div class="hero-executor__body">
+                                <aside class="hero-executor__sidebar">
+                                    <div class="hero-executor__sidebar-title">Workspace</div>
+                                    <div class="hero-executor__file active"><i class="fas fa-file-code"></i> wrtiz-hub.lua</div>
+                                    <div class="hero-executor__file"><i class="fas fa-bolt"></i> auto-farm.lua</div>
+                                    <div class="hero-executor__file"><i class="fas fa-crosshairs"></i> aimbot.lua</div>
+                                    <div class="hero-executor__file"><i class="fas fa-eye"></i> esp.lua</div>
+                                </aside>
+
+                                <div class="hero-executor__editor">
+                                    <div class="hero-executor__toolbar">
+                                        <div class="hero-executor__toolbar-left">
+                                            <span class="hero-executor__pill">Luau</span>
+                                            <span class="hero-executor__pill muted">Ready</span>
+                                        </div>
+                                        <div class="hero-executor__toolbar-right">
+                                            <button class="executor-action-btn executor-action-btn--primary" onclick="copyToClipboard()">
+                                                <i class="fas fa-copy"></i>
+                                                <span>Copy</span>
+                                            </button>
+                                            <button class="executor-action-btn">
+                                                <i class="fas fa-play"></i>
+                                                <span>Execute</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="hero-executor__code" id="executor-code-block">
+                                        <div class="hero-executor__line"><span class="line-number">1</span><span class="code-content"><span class="code-keyword">local</span> <span class="code-variable">WritzHub</span> = <span class="code-function">loadstring</span>(<span class="code-function">game:HttpGet</span>(<span class="code-string">"https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"</span>))()</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">2</span><span class="code-content"></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">3</span><span class="code-content"><span class="code-comment">-- bootstrap modules</span></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">4</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">Init</span>()</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">5</span><span class="code-content"></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">6</span><span class="code-content"><span class="code-comment">-- movement</span></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">7</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleFly</span>(<span class="code-keyword">true</span>)</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">8</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetWalkSpeed</span>(<span class="code-number">32</span>)</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">9</span><span class="code-content"></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">10</span><span class="code-content"><span class="code-comment">-- farming</span></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">11</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">StartAutoFarm</span>(<span class="code-string">"Diamonds"</span>)</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">12</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">SetTweenSpeed</span>(<span class="code-number">2.5</span>)</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">13</span><span class="code-content"></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">14</span><span class="code-content"><span class="code-comment">-- combat visuals</span></span></div>
+                                        <div class="hero-executor__line"><span class="line-number">15</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleAimBot</span>(<span class="code-keyword">true</span>)</span></div>
+                                        <div class="hero-executor__line"><span class="line-number">16</span><span class="code-content"><span class="code-variable">WritzHub</span>:<span class="code-function">ToggleESP</span>(<span class="code-keyword">true</span>)</span></div>
+                                    </div>
+
+                                    <div class="hero-executor__footer">
+                                        <div class="hero-executor__console">
+                                            <span class="console-label">Console</span>
+                                            <span class="console-text">Script injected successfully. Modules loaded without errors.</span>
+                                        </div>
+                                        <div class="copied-notification" id="copied-notification">
+                                            <i class="fas fa-check"></i>
+                                            <span>Copied to clipboard!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <p style="color: #a0a0a0; margin-bottom: 40px;">Paste this in your executor to load WritzHub with all scripts.</p>
-                    
+
+                    <p class="hero-helper-text">A cleaner, more realistic executor preview with script editor, workspace, status, and quick actions.</p>
+
                     <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
                         <a href="#executors" class="btn">
                             <span class="btn-text">View Executors</span>
@@ -247,10 +218,10 @@
             const code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Travail-code/wrtiz-hub-landing/main/writz-hub.lua"))()';
             navigator.clipboard.writeText(code).then(() => {
                 const notification = document.getElementById('copied-notification');
-                notification.style.display = 'block';
+                notification.style.display = 'inline-flex';
                 setTimeout(() => {
                     notification.style.display = 'none';
-                }, 3000);
+                }, 2500);
             });
         }
     </script>
