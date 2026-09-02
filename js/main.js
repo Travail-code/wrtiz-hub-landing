@@ -1,48 +1,4 @@
-// Writz Hub - Minimal JavaScript
-
-// Particles Canvas
-const canvas = document.getElementById('particles-canvas');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-    
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    
-    function drawGrid() {
-        const gridSize = 50;
-        const lineOpacity = 0.05;
-        
-        ctx.strokeStyle = `rgba(255, 255, 255, ${lineOpacity})`;
-        ctx.lineWidth = 1;
-        
-        for (let y = 0; y < canvas.height; y += gridSize) {
-            ctx.beginPath();
-            ctx.moveTo(0, y);
-            ctx.lineTo(canvas.width, y);
-            ctx.stroke();
-        }
-        
-        for (let x = 0; x < canvas.width; x += gridSize) {
-            ctx.beginPath();
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, canvas.height);
-            ctx.stroke();
-        }
-    }
-    
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawGrid();
-        requestAnimationFrame(animate);
-    }
-    
-    resize();
-    animate();
-    
-    window.addEventListener('resize', resize);
-}
+// WritzHub - Minimal JavaScript
 
 // Mobile Menu
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -137,10 +93,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Marquee Animation Enhancement
-document.querySelectorAll('.marquee').forEach(marquee => {
-    const content = marquee.innerHTML;
-    marquee.innerHTML += content;
 });
